@@ -19,6 +19,7 @@
   display flex
   margin-left auto
   section
+    text-align center
     height 100%
     padding-top 8px
     padding-bottom 8px
@@ -35,28 +36,90 @@
 
 .search-button
   width: 35px
+  span.icon
+    font-size 1.6em
 
 .menu-box
-  border 1px solid red
   height 105px
-  padding-top 30px
-  padding-left 110px
+  padding-top 22px
+  padding-left 115px
+  padding-right 115px
+  display flex
 
   img.shop-logo
-    background-color blue
-    height 40px
-    width 140px
+    margin-top 20px
+    height 28px
+    width auto
+
+  ul.top-menu
+    margin-top 23px
+    height 28px
+    display flex
+    margin-left auto
+    list-style none
+
+    li
+      padding-left 15px
+      padding-right 15px
+      display block
+      font-size: 1.143em;
+      color #000000
+      .icon
+        margin-left 5px
+    li:last-child
+      padding-right 20px
+
+
+.cart-box
+  margin 0
+  width: 214px
+  height: 66px
+  color: #949393
+  font-size: 0.857em
+  letter-spacing: +0.055em
+
+.cart-button
+  height: 33px
+  border 1px solid #d6d6d6
+  display flex
+  padding-left 10px
+  padding-top 9px
+  padding-right 10px
+  span.icon
+    display block
+    margin-left auto
+
+.cart-totall
+  height: 33px
+  border-left 1px solid #d6d6d6
+  border-right 1px solid #d6d6d6
+  border-bottom 1px solid #d6d6d6
+  display flex
+  padding-left 10px
+  padding-top 9px
+  padding-right 10px
+  span.total
+    margin-left auto
 
 .slider-promo
   border 1px solid red
   height 515px
 
 .slider-image
-  border 1px solid red
+  background-color #f6f3ec
   height 440px
 
 .slider-track
   height 75px
+  ul
+    margin auto
+    height 100%
+    background-color blue
+    display flex
+    padding 0px
+    li
+      background-color white
+      width 20px
 
 .user-connections
   border 1px solid red

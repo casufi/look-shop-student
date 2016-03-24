@@ -1,24 +1,46 @@
 section.user-toolbox
   section.care-info custom care: 888-23-4567{{care.phone}}
   section.shop-settings
-    section.currency-select $ US
-    section.account-button my account
-    section.search-button @
+    section.currency-select $ &nbsp; US &nbsp;
+      span.icon.ion-android-arrow-dropdown
+    section.account-button
+      spam.icon.ion-person &nbsp; my account
+    section.search-button
+      span.icon.ion-search
 section.menu-box
-  img.shop-logo
+  img.shop-logo(ng-src="images/logo.png")
   ul.top-menu
-    li.menu-item
+    li.menu-item new
+      span.icon.ion-android-arrow-dropdown
+    li.menu-item designers
+      span.icon.ion-android-arrow-dropdown
+    li.menu-item women
+      span.icon.ion-android-arrow-dropdown
+    li.menu-item men
+      span.icon.ion-android-arrow-dropdown
+    li.menu-item clearence
+      span.icon.ion-android-arrow-dropdown
+
   section.cart-box
-    section.cart-button
-    ul.cart-menu
+    section.cart-button You cart
+      span.icon.ion-android-arrow-dropdown
+    ul.cart-menu(ng-show="0")
       li.menu-item
     section.cart-totall
+      span.icon.ion-bag
+      span.total 0 items|$0
 section.slider-promo
   section.slider-image
+      img(ng-src="res/slider1.png")
     section.slider-left
     section.slider-right
     section.slider-action
   section.slider-track
+    ul
+      li 1
+      li 2
+      li 3
+      li 4
 section.user-connections
   section.email-subscription
   section.social-buttons
