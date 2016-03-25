@@ -40,13 +40,32 @@ section.slider-promo
       section.slider-action
   section.slider-track
     ul
-      li 1
-      li 2
-      li 3
-      li 4
-section.user-connections
+      li
+        i.icon.ion-record
+      li
+        i.icon.ion-record.selected
+      li
+        i.icon.ion-record
+      li
+        i.icon.ion-record
+      li
+        i.icon.ion-record
+section.user-connections.full-flex-container
   section.email-subscription
+    h3 Stay updated
+    input(type="text" placeholder="Your email address")
+    img.email-do(ng-src="images/EmailPlus.png")
+
   section.social-buttons
+    h3 Find us here
+    //TODO ask if it possible to use .icon with li directly
+    ul
+      li
+        i.icon.ion-social-facebook
+      li
+        i.icon.ion-social-twitter
+      li
+        i.icon.ion-social-pinterest
 section.promo-boxes
   section.promo-big
   section.promo-long

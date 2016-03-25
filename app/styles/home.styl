@@ -3,197 +3,257 @@ middle-screen = 760px
 small-screen = 640px
 
 .full-flex-container
-  display flex
-  padding-left 10%
-  padding-right 10%
+  display: flex
+  align-items: center
+  padding-left: 10%
+  padding-right: 10%
   @media screen and (max-width: large-screen)
-    padding-left 5%
-    padding-right 5%
+    padding-left: 5%
+    padding-right: 5%
 
 
 .user-toolbox
   height: 30px
-  background-color #000000
-  color #ffffff
+  background-color: #000000
+  color: #ffffff
   font-size: 0.786em
   letter-spacing: -0.005em
   text-transform: uppercase
 
 .care-info
-  padding-top 8px
-  padding-bottom 8px
+  padding-top: 8px
+  padding-bottom: 8px
 
 
 .shop-settings
-  height 100%
-  display flex
-  margin-left auto
+  height: 100%
+  display: flex
+  margin-left: auto
 
   section
-    text-align center
-    height 100%
-    padding-top 9px
-    border-width 1px
-    border-color #444444
-    border-style solid
+    text-align: center
+    height: 100%
+    padding-top: 9px
+    border-width: 1px
+    border-color: #444444
+    border-style: solid
 
   .currency-select
-    width 70px
+    width: 70px
 
   .account-button
     width: 127px
-    padding-top 3px
+    padding-top: 3px
     i.icon
-      font-size 1.6em
+      font-size: 1.6em
       color: #666666
 
   .search-button
     width: 35px
-    padding-top 5px
+    padding-top: 5px
     i.icon
-      font-size 1.6em
+      font-size: 1.6em
 
 .menu-box
-  height 105px
-  padding-top 22px
-
+  height: 105px
   img.shop-logo
-    margin-top 20px
-    height 28px
-    width auto
+    height: 28px
+    width: auto
 
   ul.top-menu
-    margin-top 23px
-    height 28px
-    display flex
-    margin-left auto
-    list-style none
+    height: 28px
+    display: flex
+    margin-left: auto
+    list-style: none
 
     li
-      padding-left 15px
-      padding-right 15px
-      display block
+      cursor pointer
+      padding-left: 15px
+      padding-right: 15px
+      display: block
       font-size: 1.143em;
-      color #000000
+      color: #000000
       .icon
-        margin-left 5px
+        margin-left: 5px
     li:last-child
-      padding-right 20px
-      
-
-
+      padding-right: 20px
 
 .cart-box
-  margin 0
   width: 214px
   height: 66px
   color: #949393
   font-size: 0.857em
   letter-spacing: +0.055em
 
-.cart-button
-  height: 33px
-  border 1px solid #d6d6d6
-  display flex
-  padding-left 10px
-  padding-top 9px
-  padding-right 10px
-  i.icon
-    display block
-    margin-left auto
+  .cart-button
+    height: 33px
+    border: 1px solid #d6d6d6
+    display: flex
+    padding-left: 10px
+    padding-top: 9px
+    padding-right: 10px
+    i.icon
+      display: block
+      margin-left: auto
 
-.cart-totall
-  height: 33px
-  border-left 1px solid #d6d6d6
-  border-right 1px solid #d6d6d6
-  border-bottom 1px solid #d6d6d6
-  display flex
-  padding-left 10px
-  padding-top 9px
-  padding-right 10px
-  i.icon
-    font-size 1.6em
-  span.total
-    margin-left auto
+  .cart-totall
+    height: 33px
+    border-left: 1px solid #d6d6d6
+    border-right: 1px solid #d6d6d6
+    border-bottom: 1px solid #d6d6d6
+    display: flex
+    padding-left: 10px
+    padding-top: 9px
+    padding-right: 10px
+    i.icon
+      font-size: 1.6em
+    span.total
+      margin-left: auto
 
 .slider-promo
-  border 1px solid red
-  height 515px
+  height: 515px
 
 .slider-image
-  background-color #f6f3ec
-  height 440px
-  position relative
+  background-color: #f6f3ec
+  height: 440px
+  position: relative
+  text-align center
 
 .slider
-  margin 0px
-  position absolute
+  position: absolute
+  display table-cell
   width: 30px
   height: 117px
-  top 162px
-  background-color rgba(255, 255, 255, 0.9);
-  padding-top 50px
-  text-align center
+  top: 162px
+  background-color: rgba(255, 255, 255, 0.9);
+  padding-top: 50px
+  text-align: center
+  cursor pointer
   &.left
-    left 0px
+    left: 0px
   &.right
-    right 0px
+    right: 0px
 
 
 .slider-track
-  height 75px
+  height: 75px
   ul
-    margin auto
-    height 100%
-    background-color blue
-    display flex
     padding 0px
+    margin: auto
+    height: 100%
+    position relative
+    display: flex
+    justify-content: center
+    list-style: none
     li
-      background-color white
-      width 20px
+      display block
+      position relative
+      top 50%
+      margin-top: -0.5em;
+      background-color: transparent
+      width: 30px
+      text-align center
+      .selected
+        color #fd926d
+      .icon
+        cursor pointer
 
 .user-connections
-  border 1px solid red
   background-color: #ededed
   height: 55px
+  color: #6b6b6b
+  h3
+    font-size: 0.857em
+    font-weight: 400;
+    letter-spacing: -0.005em
+    margin-right 5px
+
+  .email-subscription
+    display flex
+    align-items: center
+    input
+      height: 28px
+      color: #9f9f9f
+      font-size: 0.857em
+      font-style: italic
+      letter-spacing: -0.005em
+      text-align: left
+      padding-left 10px
+
+    input:focus
+        color black
+        font-style: normal
+    img.email-do
+        position relative
+        right 2px
+        height 26px
+        width auto
+
+  .social-buttons
+    border: 1px solid red
+    height 100%
+    display flex
+    margin-left: auto
+    align-items: center
+    ul
+      position relative
+      height 100%
+      padding 0px
+      display: flex
+      list-style: none
+      li
+        border: 1px solid red
+        height 100%
+        display block
+        position relative
+        i.icon
+          display block
+          position relative
+          top 50%
+          margin-top: -0.5em
+          font-size 30px
+
+      li:nth-child(even)
+        background-color #f7f7f7
+
 
 .promo-boxes
-  border 1px solid red
+  border: 1px solid red
   height: 433px
-  display flex
-  padding 90px
+  display: flex
+  padding: 90px
 
 .hot-sales
-  border 1px solid red
+  border: 1px solid red
   height: 502px
 
 .hot-menu
-  border 1px solid red
-  height 45px
+  border: 1px solid red
+  height: 45px
 
 .discounts
-  border 1px solid red
-  height 670px
+  border: 1px solid red
+  height: 670px
 
 .fav-brands-box
-  border 1px solid red
-  min-height 100px
+  border: 1px solid red
+  min-height: 100px
 
 .about-box
-  border 1px solid red
-  min-height 160px
+  border: 1px solid red
+  min-height: 160px
 
 .footer-full
-  position relative
-  border 1px solid red
-  min-height 330px
+  position: relative
+  border: 1px solid red
+  min-height: 330px
 
 .payments-box
-  border 1px solid red
-  height 58px
+  border: 1px solid red
+  height: 58px
 
 .footer-short
-  position absolute
-  bottom 0
-  border 1px solid red
-  height 74px
+  position: absolute
+  bottom: 0
+  border: 1px solid red
+  height: 74px
