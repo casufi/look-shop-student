@@ -104,19 +104,38 @@ section.hot-sales
 
 section.discounts
   section.discounts-top
+    img(ng-src="images/DiscountHeader.png")
   section.discounts-positions
     //will be moved to directive
-    section.position
-      section.position-sale-corner
-      section.position-picture
-      section.position-bottom
-        section.position-button
+    section.positions
+      section.position(ng-repeat="a in [1,2,3,4,5,6,7,8]")
+        img.position-picture(ng-src="res/Dress.png")
+        section.position-sale-corner
+        section.position-label
+          section.position-name hot shorts
+          section.position-button
+            span add to cart
+            i.icon.mdi.mdi-plus
+
 section.fav-brands-box
-  ul.brands
-    li.brand-logo
+  section.fav-brand-header favourite brands
+  section.brand-logos
+      img(ng-src="res/brands/Addict.png")
+      img(ng-src="res/brands/AbandonShip.png")
+      img(ng-src="res/brands/Adidas.png")
+      img(ng-src="res/brands/BoyLondon.png")
+      img(ng-src="res/brands/Converse.png")
+      img(ng-src="res/brands/CalvinKlein.png")
+      img(ng-src="res/brands/Edwin.png")
+      img(ng-src="res/brands/Greenson.png")
 section.about-box
+  h2 About LookShop
+  p.
+    This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeosu dapibus condimentum sit amet a augue. condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
 section.footer-full
   section.payments-box
+    span We accept
+    img(ng-src="res/Payments.png")
   section.footer-main
     section.footer-links
     section.footer-links

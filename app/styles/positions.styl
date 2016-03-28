@@ -5,7 +5,7 @@
   flex-flow row nowrap
   background transparent
   height 100%
-  width 100%
+  width 150%
   margin-right auto
   margin-left auto
 
@@ -19,6 +19,10 @@
   margin-right 15px
   padding 0px
   width 240px
+  transition: transform 0.3s
+  &:hover
+    transform: scale(1.05, 1.05);
+    transition: transform 0s
   img
     margin 0px
     width 100%
@@ -26,7 +30,7 @@
   .position-label
     text-align center
     padding-top 15px
-    background-color #ffffff
+    background-color #f7f7f7
     position absolute
     bottom 0
     width: 100%
@@ -47,15 +51,15 @@
       margin-left auto
       margin-right auto
       position relative
-
+      &:hover
+        border-width 2px
+        border-color black
       i.icon
       span
+        cursor pointer
         display inline-block
         color #ffffff
         position relative
         top 50%
         transform: translateY(-0.6em)
         text-transform uppercase
-  &:hover
-    border-width 20px
-    border-color black
