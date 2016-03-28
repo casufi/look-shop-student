@@ -92,11 +92,15 @@ section.hot-sales
         i.icon.mdi.mdi-chevron-right
   section.hot-positions
     //will be moved to directive
-    section.position
-      section.position-sale-corner
-      section.position-picture
-      section.position-bottom
-        section.position-button
+    section.positions
+      section.position(ng-repeat="a in [1,2,3,4,5,6,7,8]")
+        img.position-picture(ng-src="res/Dress.png")
+        section.position-sale-corner
+        section.position-label
+          section.position-name hot shorts
+          section.position-button
+            span add to cart
+            i.icon.mdi.mdi-plus
 
 section.discounts
   section.discounts-top
