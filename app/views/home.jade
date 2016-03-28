@@ -2,33 +2,33 @@ section.user-toolbox.full-flex-container
   section.care-info custom care: 888-23-4567{{care.phone}}
   section.shop-settings
     section.currency-select $ &nbsp; US &nbsp;
-      i.icon.ion-android-arrow-dropdown
+      i.icon.mdi.mdi-menu-down
     section.account-button
-      i.icon.ion-person &nbsp;
+      i.icon.mdi.mdi-account &nbsp;
       span my account
     section.search-button
-      i.icon.ion-search
+      i.icon.mdi.mdi-magnify
 section.menu-box.full-flex-container
   img.shop-logo(ng-src="images/logo.png")
   ul.top-menu
     li.menu-item new
-      i.icon.ion-android-arrow-dropdown
+      i.icon.mdi.mdi-menu-down
     li.menu-item designers
-      i.icon.ion-android-arrow-dropdown
+      i.icon.mdi.mdi-menu-down
     li.menu-item women
-      i.icon.ion-android-arrow-dropdown
+      i.icon.mdi.mdi-menu-down
     li.menu-item men
-      i.icon.ion-android-arrow-dropdown
+      i.icon.mdi.mdi-menu-down
     li.menu-item clearence
-      i.icon.ion-android-arrow-dropdown
+      i.icon.mdi.mdi-menu-down
 
   section.cart-box
     section.cart-button You cart
-      i.icon.ion-android-arrow-dropdown
+      i.icon.mdi.mdi-menu-down
     ul.cart-menu(ng-show="0")
       li.menu-item
     section.cart-totall
-      i.icon.ion-bag
+      i.icon.mdi.mdi-shopping
       span.total 0 items|$0
 section.slider-promo
   section.slider-image
@@ -39,17 +39,16 @@ section.slider-promo
         img(ng-src="images/ArrowRight.png")
       section.slider-action
   section.slider-track
-    ul
-      li
-        i.icon.ion-record
-      li
-        i.icon.ion-record.selected
-      li
-        i.icon.ion-record
-      li
-        i.icon.ion-record
-      li
-        i.icon.ion-record
+    section
+      i.icon.mdi.mdi-record
+    section
+      i.icon.mdi.mdi-record.selected
+    section
+      i.icon.mdi.mdi-record
+    section
+      i.icon.mdi.mdi-record
+    section
+      i.icon.mdi.mdi-record
 section.user-connections.full-flex-container
   section.email-subscription
     h3 Stay updated
@@ -58,16 +57,12 @@ section.user-connections.full-flex-container
 
   section.social-buttons
     h3 Find us here
-    ul
-      li
-        img.one-px(ng-src="images/1px-0.png")
-        i.icon.ion-social-facebook
-      li
-        img.one-px(ng-src="images/1px-0.png")
-        i.icon.ion-social-twitter
-      li
-        img.one-px(ng-src="images/1px-0.png")
-        i.icon.ion-social-pinterest
+    section
+      i.icon.mdi.mdi-facebook
+    section
+      i.icon.mdi.mdi-twitter
+    section
+      i.icon.mdi.mdi-pinterest
 
 section.promo-boxes
   section.promo-big
@@ -80,9 +75,21 @@ section.promo-boxes
     img(ng-src="res/PromoBoxSmall2.png")
 
 section.hot-sales
-  section.hot-menu
+  section.hot-menu.full-flex-container
     section.hot-buttons
+      section.active
+          span what`s hot
+      section
+        span designers
+      section
+        span featured
+      section
+        span latest
     section.hot-leftrigth
+      section.hot-left.active
+        i.icon.mdi.mdi-chevron-left
+      section.hot-rigth
+        i.icon.mdi.mdi-chevron-right
   section.hot-positions
     //will be moved to directive
     section.position

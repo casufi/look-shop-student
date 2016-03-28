@@ -137,15 +137,10 @@ small-screen = 640px
 
 .slider-track
   height: 75px
-  ul
-    padding 0px
-    margin: auto
-    height: 100%
-    position relative
-    display: flex
-    justify-content: center
-    list-style: none
-    li
+  display: flex
+  justify-content: center
+  section
+    i
       display block
       position relative
       top 50%
@@ -153,14 +148,15 @@ small-screen = 640px
       background-color: transparent
       width: 30px
       text-align center
-      .selected
+      &.selected
         color #fd926d
-      .icon
+      &.icon
         cursor pointer
 
+user-connections-height = 55px
 .user-connections
   background-color: #ededed
-  height: 55px
+  height: user-connections-height
   color: #6b6b6b
   h3
     font-size: 0.857em
@@ -191,32 +187,28 @@ small-screen = 640px
         width auto
 
   .social-buttons
-    height 100%
+    height user-connections-height
+    margin 0px
+    padding 0px
+    border-width 0px
     display flex
     margin-left: auto
     align-items: center
-    ul
-      position relative
-      height 100%
+
+    section
+      text-align: center
+      height user-connections-height
+      width user-connections-height
+      margin 0px
       padding 0px
-      display: flex
-      list-style: none
-      li
-        height 100%
+      border-width 0px
+      i.icon
         display block
         position relative
-        img.one-px
-          height 100%
-          width auto
-        i.icon
-          display block
-          position absolute
-          top 50%
-          left 50%
-          margin-top: -0.5em
-          margin-left: -0.5em
-          font-size 25px
-      li:nth-child(odd)
+        top 50%
+        margin-top: -0.5em
+        font-size 27px
+      &:nth-child(even)
         background-color #f7f7f7
 
 
@@ -231,32 +223,82 @@ small-screen = 640px
   margin-left auto
   margin-right auto
   align-content: center
-
   section
-    margin 1px
+    padding 1px
+    img
+      height 100%
+      width auto
+  .promo-big
+    width: 484px
+    height: 340px
 
-.promo-big
-  flex-grow: 2
-  width: 484px
-  height: 340px
+  .promo-long
+    width: 484px
+    height: 169px
 
-.promo-long
-  flex-grow: 2
-  width: 484px
-  height: 169px
-
-.promo-small
-  flex-grow: 1
-  width: 241px
-  height: 169px
+  .promo-small
+    width: 241px
+    height: 169px
 
 .hot-sales
   border: 1px solid red
-  height: 502px
+  hot-menu-height = 45px
+  .hot-menu
+    height: hot-menu-height
+    .hot-buttons
+      height hot-menu-height
+      margin 0px
+      padding 0px
+      border-width 0px
+      display flex
+      section
+        display inline-block
+        height 100%
+        text-transform uppercase
+        padding-left 15px
+        padding-right 15px
+        &.active
+          background-color #fd926d
+          color #ffffff
+        span
+          cursor pointer
+          display block
+          position relative
+          top 50%
+          margin-top: -0.5em
 
-.hot-menu
-  border: 1px solid red
-  height: 45px
+    .hot-leftrigth
+      margin-left: auto
+      height hot-menu-height
+      padding 0px
+      border-width 0px
+      display flex
+      section
+        text-align: center
+        background-color #f2f2f2
+        width hot-menu-height
+        height hot-menu-height
+        margin 0px
+        padding 0px
+        border-width 0px
+        &.active
+          background-color #fd926d
+          color #ffffff
+        i.icon
+          cursor pointer
+          display block
+          position relative
+          top 50%
+          margin-top: -0.5em
+          font-size 45px
+
+
+  .hot-positions
+    height 455px
+    background-color #fd926d
+    display flex
+
+
 
 .discounts
   border: 1px solid red

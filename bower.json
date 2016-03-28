@@ -7,7 +7,7 @@
     "angular-cookies": "^1.4.8",
     "angular-route": "^1.4.8",
     "normalize.css": "^3.0.2",
-    "ionicons":""
+    "mdi":""
   },
   "resolutions": {
     "angular": ">=1.4.8"

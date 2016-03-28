@@ -61,7 +61,7 @@ module.exports = {
     'styles': 'app/**/*.{styl,css}',
     'stylus': 'app/**/*.styl',
     'css': 'app/**/*.css',
-    'images': 'app/public/images/**/*.{jpg,png,jpeg}',
+    'images': 'app/public/images/**/*.{jpg,png,jpeg,svg}',
     'assets': [
       'app/public/**/*',
       '!app/public/images',
