@@ -1,7 +1,8 @@
 div.user-toolbox.full-flex-container
   div.care-info custom care: 888-23-4567{{care.phone}}
   div.shop-settings
-    div.currency-select $ &nbsp; US &nbsp;
+    div.currency-select
+      span $ &nbsp; US &nbsp;
       i.icon.mdi.mdi-menu-down
     div.account-button
       i.icon.mdi.mdi-account &nbsp;
@@ -11,16 +12,16 @@ div.user-toolbox.full-flex-container
 
 header.menu-box.full-flex-container
   img.shop-logo(ng-src="images/logo.png")
-  menu.top-menu
-    menu-item.menu-item new
+  nav.top-menu
+    a.menu-item new
       i.icon.mdi.mdi-menu-down
-    menu-item.menu-item designers
+    a.menu-item designers
       i.icon.mdi.mdi-menu-down
-    menu-item.menu-item women
+    a.menu-item women
       i.icon.mdi.mdi-menu-down
-    menu-item.menu-item men
+    a.menu-item men
       i.icon.mdi.mdi-menu-down
-    menu-item.menu-item clearence
+    a.menu-item clearence
       i.icon.mdi.mdi-menu-down
 
   div.cart-box
@@ -54,12 +55,12 @@ div.slider-promo
 
 div.user-connections.full-flex-container
   section.email-subscription
-    h3 Stay updated
+    h2 Stay updated
     input(type="text" placeholder="Your email address")
     img.email-do(ng-src="images/EmailPlus.png")
 
   section.social-buttons
-    h3 Find us here
+    h2 Find us here
     a(ng-href="http://facebook.com/")
       i.icon.mdi.mdi-facebook
     a(ng-href="http://twitter.com/")
@@ -126,12 +127,12 @@ section.fav-brands-box
   div.brand-logos
       img(ng-src="res/brands/Addict.png" alt="Addict")
       img(ng-src="res/brands/AbandonShip.png" alt="Abandon Ship")
-      img(ng-src="res/brands/Adidas.png")
-      img(ng-src="res/brands/BoyLondon.png")
-      img(ng-src="res/brands/Converse.png")
-      img(ng-src="res/brands/CalvinKlein.png")
-      img(ng-src="res/brands/Edwin.png")
-      img(ng-src="res/brands/Greenson.png")
+      img(ng-src="res/brands/Adidas.png" alt="Adidas")
+      img(ng-src="res/brands/BoyLondon.png" alt="Boy London")
+      img(ng-src="res/brands/Converse.png" alt="Converse")
+      img(ng-src="res/brands/CalvinKlein.png" alt="Calvin Klein")
+      img(ng-src="res/brands/Edwin.png" alt="Edwin")
+      img(ng-src="res/brands/Greenson.png" alt="Greenson")
 
 section.about-box
   h2 About LookShop
@@ -144,43 +145,66 @@ footer.footer-full
     img(ng-src="res/Payments.png")
   div.footer-main.full-flex-container
     div.footer-links
-      nav.footer-link
+      div.footer-link
         h2 Customer Service
-        a Contact
-        a FAQ
-        a Terms of payment
-        a Deliver terms and conditions
-        a Returns and Refunds
-      nav.footer-link
+        a(ng-href="1") Contact
+        a(ng-href="1") FAQ
+        a(ng-href="1") Terms of payment
+        a(ng-href="1") Deliver terms and conditions
+        a(ng-href="1") Returns and Refunds
+      div.footer-link
         h2 Information
-        a Affiliate
-        a Cookies
-        a How to Shop
-        a About Nelly
-        a Investor relations
-      nav.footer-link
+        a(ng-href="1") Affiliate
+        a(ng-href="1") Cookies
+        a(ng-href="1") How to Shop
+        a(ng-href="1") About Nelly
+        a(ng-href="1") Investor relations
+      div.footer-link
         h2 Campaigns
-        a Event dresses
-        a Makeup
-        a Fashion forward
-        a training clothes
-        a Special Occasion Dresses
-      nav.footer-link
+        a(ng-href="1") Event dresses
+        a(ng-href="1") Makeup
+        a(ng-href="1") Fashion forward
+        a(ng-href="1") training clothes
+        a(ng-href="1") Special Occasion Dresses
+      div.footer-link
         h2 Stores
-        a Paris
-        a New York
-        a London
-        a Madrid
-        a Tokio
-    nav.footer-social
+        a(ng-href="1") Paris
+        a(ng-href="1") New York
+        a(ng-href="1") London
+        a(ng-href="1") Madrid
+        a(ng-href="1") Tokio
+    div.footer-social
       h2 Social
-      a
-      a
-      a
-      a
-      a
-      a
+      div.footer-social-icons
+        a.round-social(ng-href="http://twitter.com")
+          i.icon.mdi.mdi-twitter
+        a.round-social(ng-href="http://pinterest.com")
+          i.icon.mdi.mdi-pinterest
+        a.round-social(ng-href="http://facebook.com")
+          i.icon.mdi.mdi-facebook
+        a.round-social(ng-href="http://plus.google.com")
+          i.icon.mdi.mdi-google-plus
+        a.round-social(ng-href="http://www.instagram.com/")
+          i.icon.mdi.mdi-instagram
+        a.round-social(ng-href="http://vimeo.com/")
+          i.icon.mdi.mdi-vimeo
     div.footer-logo
-  div.footer-short
+      img(ng-src="images/Secured.png")
+  div.footer-short.full-flex-container
+    nav.footer-short-links
+      a(ng-href="1")
+        span Privacy & Coolies
+      a(ng-href="1")
+        span Terms & Conditions
+      a(ng-href="1")
+        span Accessibility
+      a(ng-href="1")
+        span Store Directory
+      a(ng-href="1")
+        span About Us
+    div.footer-short-cr
+      span &copy;LookShop.com
+      span All Rights Reserved
+
 
 

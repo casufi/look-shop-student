@@ -1,0 +1,126 @@
+large-screen = 1080px
+middle-screen = 760px
+small-screen = 640px
+body-text-color = #555555
+font-weight-normal = 400
+font-weight-bold = 700
+
+footer-text-color=#544e4d
+.footer-full
+  position: relative
+  padding-bottom 74px
+
+.payments-box
+  position relative
+  text-align center
+  background-color: #f7f7f7;
+  height: 58px
+  padding-top 20px
+  span
+    display inline-block
+    position relative
+    transform: translateY(-0.5em)
+    margin-right 20px
+  img
+    display inline-block
+    position relative
+
+.footer-main
+  background-color #ededed
+  display flex
+  align-items: flex-start
+  min-height 160px
+  h2
+    font-size: 1.143em
+    font-weight: font-weight-bold
+    letter-spacing: -0.01em
+    line-height: 1.25
+    text-align: left
+    margin-top 0px
+    margin-bottom 5px
+
+  .footer-links
+    display flex
+    height 100%
+    .footer-link
+      color: footer-text-color
+      padding-left 30px
+      padding-right 30px
+      padding-top 15px
+      padding-bottom 30px
+      a
+        display block
+        font-size: 0.857em
+        line-height: 1.5
+        text-align: left
+        &:link
+        &:visited
+          color: footer-text-color
+          text-decoration: none
+        &:hover
+          text-decoration: underline
+
+  .footer-social
+    width: 200px
+    height 100%
+    color: footer-text-color
+    padding-left 30px
+    padding-right 30px
+    padding-top 15px
+    padding-bottom 30px
+    .footer-social-icons
+      display flex
+      flex-flow row wrap
+      a.round-social
+        text-align center
+        flex-shrink 0
+        padding 0px
+        margin 5px
+        display block
+        background-color: #4c4c4b
+        width 35px
+        height 35px
+        border-radius 50%
+        &:hover
+          transform: scale(1.1, 1.1)
+        .icon
+          display inline-block
+          position relative
+          top 50%
+          transform: translateY(-0.5em)
+          font-size: 1.5em
+          color #ffffff
+
+  .footer-logo
+    padding-left 30px
+    padding-right 30px
+    padding-top 15px
+    padding-bottom 30px
+
+footer-short-base-color = #8d8d8d
+.footer-short
+  background-color #000000
+  width 100%
+  position: absolute
+  bottom: 0
+  height: 74px
+  color: footer-short-base-color
+  font-size: 0.786em
+  line-height: 1.818
+  .footer-short-links
+    a
+      padding-left 15px
+      padding-right 15px
+      border-left 1px solid #8d8d8d
+      &:first-child
+        border-left 0px
+      &:link
+      &:visited
+        color: footer-short-base-color
+        text-decoration none
+      &:hover
+        text-decoration underline
+  .footer-short-cr
+    margin-left auto
+    span
+      display block
