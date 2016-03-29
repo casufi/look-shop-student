@@ -1,6 +1,7 @@
 large-screen = 1080px
 middle-screen = 760px
 small-screen = 640px
+body-text-color = #555555
 
 .full-flex-container
   display: flex
@@ -30,7 +31,7 @@ small-screen = 640px
   display: flex
   margin-left: auto
 
-  section
+  div
     text-align: center
     height: 100%
     padding-top: 9px
@@ -60,13 +61,12 @@ small-screen = 640px
     height: 28px
     width: auto
 
-  ul.top-menu
+  menu
     height: 28px
     display: flex
     margin-left: auto
-    list-style: none
 
-    li
+    menu-item
       cursor pointer
       padding-left: 15px
       padding-right: 15px
@@ -75,8 +75,6 @@ small-screen = 640px
       color: #000000
       .icon
         margin-left: 5px
-    li:last-child
-      padding-right: 20px
 
 .cart-box
   width: 214px
@@ -139,7 +137,8 @@ small-screen = 640px
   height: 75px
   display: flex
   justify-content: center
-  section
+  a
+    display inline-block
     i
       display block
       position relative
@@ -154,10 +153,14 @@ small-screen = 640px
         cursor pointer
 
 user-connections-height = 55px
+user-connections-back = #ededed
+user-connections-back_alt = #f7f7f7
+user-connections-text = #6b6b6b
+user-connections-inp = #9f9f9f
 .user-connections
-  background-color: #ededed
+  background-color: user-connections-back
   height: user-connections-height
-  color: #6b6b6b
+  color: user-connections-text
   h3
     font-size: 0.857em
     font-weight: 400;
@@ -170,7 +173,7 @@ user-connections-height = 55px
     input
       border 0px
       height: 28px
-      color: #9f9f9f
+      color: user-connections-inp
       font-size: 0.857em
       font-style: italic
       letter-spacing: -0.005em
@@ -178,7 +181,7 @@ user-connections-height = 55px
       padding-left 10px
 
     input:focus
-        color black
+        color: user-connections-text
         font-style: normal
     img.email-do
         position relative
@@ -194,14 +197,22 @@ user-connections-height = 55px
     display flex
     margin-left: auto
     align-items: center
-
-    section
+    a
+      display block
       text-align: center
       height user-connections-height
       width user-connections-height
       margin 0px
       padding 0px
       border-width 0px
+      transition: transform 0.5s
+      &:link
+      &:visited
+        text-decoration none
+        color: user-connections-text
+      &:hover
+        transform: scale(1.1, 1.1);
+        transition: transform 0s
       i.icon
         display block
         position relative
@@ -209,13 +220,14 @@ user-connections-height = 55px
         margin-top: -0.5em
         font-size 27px
       &:nth-child(even)
-        background-color #f7f7f7
+        background-color user-connections-back_alt
+      &:nth-child(odd)
+        background-color user-connections-back
 
 
 .promo-boxes
   max-width: 970px
   height: 345px
-  border: 1px solid red
   display: flex
   flex-flow column wrap
   margin-top: 40px
@@ -223,6 +235,7 @@ user-connections-height = 55px
   margin-left auto
   margin-right auto
   align-content: center
+  overflow hidden
   section
     padding 1px
     img
@@ -240,6 +253,7 @@ user-connections-height = 55px
     width: 241px
     height: 169px
 
+color-back-activ = #fd926d
 .hot-sales
   hot-menu-height = 45px
   .hot-menu
@@ -250,17 +264,22 @@ user-connections-height = 55px
       padding 0px
       border-width 0px
       display flex
-      section
+      a
         display inline-block
         height 100%
         text-transform uppercase
         padding-left 15px
         padding-right 15px
         &.active
-          background-color #fd926d
+          background-color color-back-activ
           color #ffffff
+        &:link
+        &:visited
+          text-decoration none
+          color: body-text-color
+        &:hover
+          text-decoration underline
         span
-          cursor pointer
           display block
           position relative
           top 50%
@@ -272,7 +291,8 @@ user-connections-height = 55px
       padding 0px
       border-width 0px
       display flex
-      section
+      a
+        display block
         text-align: center
         background-color #f2f2f2
         width hot-menu-height
@@ -319,10 +339,14 @@ user-connections-height = 55px
 .fav-brands-box
   border-top: solid 1px #d8d8d8
   border-bottom: solid 1px #d8d8d8
+  padding-bottom 30px
   min-height: 100px
   .fav-brand-header
+    display block
     margin-left auto
     margin-right auto
+    margin-top 0px
+    margin-bottom 0px
     width 200px
     padding-left 10px
     padding-right 10px
@@ -361,18 +385,24 @@ user-connections-height = 55px
   text-align center
   background-color: #f7f7f7;
   height: 58px
-
+  padding-top 20px
   span
     display inline-block
     position relative
-    top 50%
     transform: translateY(-0.5em)
+    margin-right 20px
   img
     display inline-block
     position relative
-    top 50%
 
-
+.footer-main
+  border: 1px solid red
+  display flex
+  .footer-links
+    display flex
+    .footer-link
+      a
+        display block
 .footer-short
   position: absolute
   bottom: 0
