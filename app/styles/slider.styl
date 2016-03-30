@@ -1,0 +1,46 @@
+.slider-promo
+  height: 515px
+
+.slider-image
+  background-color: #f6f3ec
+  height: 440px
+  position: relative
+  text-align center
+
+.slider
+  position: absolute
+  display table-cell
+  width: 30px
+  height: 117px
+  top: 162px
+  background-color: rgba(255, 255, 255, 0.9);
+  padding-top: 50px
+  text-align: center
+  cursor pointer
+  &.left
+    left: 0px
+  &.right
+    right: 0px
+
+slider-track-height = 75px
+.slider-track
+  height: slider-track-height
+  display: flex
+  justify-content: center
+  a
+    height slider-track-height
+    display block
+    position relative
+    i
+      display block
+      height slider-track-height
+      position relative
+      top 50%
+      margin-top: -0.5em;
+      background-color: transparent
+      width: 30px
+      text-align center
+      &.selected
+        color #fd926d
+      &.icon
+        cursor pointer
