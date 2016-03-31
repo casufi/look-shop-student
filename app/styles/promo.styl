@@ -1,0 +1,39 @@
+large-screen = 1080px
+middle-screen = 925px
+small-screen = 640px
+body-text-color = #555555
+font-weight-normal = 400
+font-weight-bold = 700
+
+.promo-boxes
+  max-width: 970px
+  max-height: 345px
+  display: flex
+  flex-flow column wrap
+  margin-top: 40px
+  margin-bottom: 40px
+  margin-left auto
+  margin-right auto
+  align-content: center
+  overflow hidden
+  @media screen and (max-width: small-screen)
+    display none
+
+  section
+    padding 1px
+  img
+    width 100%
+    height auto
+
+  .promo-big
+    display: flex
+    flex-flow column
+    width: 50%
+
+  .promo-long
+    display: flex
+    flex-flow row
+    width: 100%
+
+  .promo-small
+    width: 50%

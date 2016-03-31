@@ -1,18 +1,24 @@
 .slider-promo
-  height: 515px
+  max-height: 515px
 
 .slider-image
+  width 100%
   background-color: #f6f3ec
-  height: 440px
   position: relative
   text-align center
+.slider-image>img
+    max-width 1200px
+    width 100%
+    height auto
+
 
 .slider
   position: absolute
   display table-cell
   width: 30px
-  height: 117px
-  top: 162px
+  height: 118px
+  top: 50%
+  transform: translateY(-59px)
   background-color: rgba(255, 255, 255, 0.9);
   padding-top: 50px
   text-align: center
