@@ -109,16 +109,19 @@ footer-short-base-color = #8d8d8d
   width 100%
   position: absolute
   bottom: 0
-  height: 74px
   color: footer-short-base-color
   font-size: 0.786em
   line-height: 1.818
+  @media screen and (max-width: small-screen)
+    flex-flow column
   .footer-short-links
     @media screen and (max-width: small-screen)
+      border-top 1px solid white
+      order: 2
       flex-flow column
-      width 50%
-      display none
+      width 100%
     a
+      height: 74px
       padding-left 10px
       padding-right 10px
       border-left 1px solid #8d8d8d
@@ -130,7 +133,23 @@ footer-short-base-color = #8d8d8d
         text-decoration none
       &:hover
         text-decoration underline
+      @media screen and (max-width: small-screen)
+        text-transform: uppercase
+        width: 100%
+        display: none
+
+    a.menu-header
+      display: none
+      i.icon
+        font-size 1.6em
+        margin-right 10px
+      @media screen and (max-width: small-screen)
+        display flex
+        align-items: center
+        justify-content: space-between
+
   .footer-short-cr
+    height: 74px
     margin-left auto
     span
       display block

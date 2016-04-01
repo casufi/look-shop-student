@@ -10,17 +10,24 @@ font-weight-bold = 700
   height: 670px
 
 .discounts-top
-  width: 970px
+  max-width: 970px
   height auto
   margin-top 20px
   margin-left auto
   margin-right auto
   text-align center
+  position relative
   img
+    display inline-block
+    height: 100%
+    width: auto
+    margin 0px 100px
+  .discounts-border
     width: 100%
-    height: auto
-    object-fit: none
-    object-position: center
+    height: 50%
+    position: absolute
+    bottom: 0
+    border-top: solid 1px #d8d8d8
 
 .discounts-positions
   height 455px
