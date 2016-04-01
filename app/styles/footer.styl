@@ -1,5 +1,5 @@
 large-screen = 1080px
-middle-screen = 760px
+middle-screen = 815px
 small-screen = 640px
 body-text-color = #555555
 font-weight-normal = 400
@@ -108,9 +108,13 @@ footer-short-base-color = #8d8d8d
   font-size: 0.786em
   line-height: 1.818
   .footer-short-links
+    @media screen and (max-width: small-screen)
+      flex-flow column
+      width 50%
+      display none
     a
-      padding-left 15px
-      padding-right 15px
+      padding-left 10px
+      padding-right 10px
       border-left 1px solid #8d8d8d
       &:first-child
         border-left 0px
@@ -124,3 +128,4 @@ footer-short-base-color = #8d8d8d
     margin-left auto
     span
       display block
+

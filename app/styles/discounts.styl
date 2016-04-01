@@ -1,3 +1,10 @@
+large-screen = 1080px
+middle-screen = 815px
+small-screen = 640px
+body-text-color = #555555
+font-weight-normal = 400
+font-weight-bold = 700
+
 .discounts
   width 100%
   height: 670px
@@ -20,4 +27,7 @@
   margin-left 100px
   margin-right 100px
   overflow hidden
-  overflow hidden
+  @media screen and (max-width: small-screen)
+    margin-left 5px
+    margin-right 5px
+

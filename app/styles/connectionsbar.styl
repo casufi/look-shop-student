@@ -1,0 +1,89 @@
+large-screen = 1080px
+middle-screen = 815px
+small-screen = 640px
+body-text-color = #555555
+font-weight-normal = 400
+font-weight-bold = 700
+
+user-connections-height = 55px
+user-connections-back = #ededed
+user-connections-back_alt = #f7f7f7
+user-connections-text = #6b6b6b
+user-connections-inp = #9f9f9f
+
+.user-connections
+  background-color: user-connections-back
+  color: user-connections-text
+  @media screen and (max-width: small-screen)
+    flex-flow column
+
+  h2
+    font-size: 0.857em
+    font-weight: font-weight-normal
+    letter-spacing: -0.005em
+    margin-right 15px
+
+  .email-subscription
+    height: user-connections-height
+    display flex
+    align-items: center
+    input
+      border 0px
+      height: 28px
+      color: user-connections-inp
+      font-size: 0.857em
+      font-style: italic
+      letter-spacing: -0.005em
+      text-align: left
+      padding-left 10px
+
+    input:focus
+      color: user-connections-text
+      font-style: normal
+    img.email-do
+      position relative
+      right 2px
+      height 26px
+      width auto
+
+  .social-buttons
+    height user-connections-height
+    margin 0px
+    padding 0px
+    border-width 0px
+    display flex
+    margin-left: auto
+    align-items: center
+    @media screen and (max-width: small-screen)
+      width 100%
+      margin-left: inherit
+      background-color white
+      justify-content: center
+
+    a
+      display block
+      text-align: center
+      height user-connections-height
+      width user-connections-height
+      margin 0px
+      padding 0px
+      border-width 0px
+      transition: transform 0.5s
+      &:link
+      &:visited
+        text-decoration none
+        color: user-connections-text
+      &:hover
+        transform: scale(1.1, 1.1);
+        transition: transform 0s
+      i.icon
+        display block
+        position relative
+        top 50%
+        margin-top: -0.5em
+        font-size 27px
+      &:nth-child(even)
+        background-color user-connections-back_alt
+      &:nth-child(odd)
+        background-color user-connections-back
+
