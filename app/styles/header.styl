@@ -66,6 +66,9 @@ user-toolbox-height=30px
   img.shop-logo
     height: 28px
     width: auto
+    @media screen and (max-width: small-screen)
+      margin 20px 0px
+
 
   .top-menu
     height: 28px
@@ -87,10 +90,12 @@ user-toolbox-height=30px
 
   .cart-box
     width: 214px
-    height: 66px
     color: #949393
     font-size: 0.857em
     letter-spacing: +0.055em
+    @media screen and (max-width: small-screen)
+      width 100%
+
 
     .cart-button
       height: 33px
@@ -99,6 +104,9 @@ user-toolbox-height=30px
       align-items: center
       padding-left: 10px
       padding-right: 10px
+      @media screen and (max-width: small-screen)
+        display none
+
       i.icon
         display: block
         margin-left: auto

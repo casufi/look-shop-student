@@ -30,6 +30,9 @@ footer-text-color=#544e4d
   display flex
   align-items: flex-start
   min-height 160px
+  @media screen and (max-width: small-screen)
+    flex-flow column
+
   h2
     font-size: 1.143em
     font-weight: font-weight-bold
@@ -38,6 +41,7 @@ footer-text-color=#544e4d
     text-align: left
     margin-top 0px
     margin-bottom 5px
+
 
   .footer-links
     display flex
@@ -59,6 +63,8 @@ footer-text-color=#544e4d
           text-decoration: none
         &:hover
           text-decoration: underline
+    @media screen and (max-width: small-screen)
+      flex-flow column
 
   .footer-social
     width: 200px

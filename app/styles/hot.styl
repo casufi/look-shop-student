@@ -1,0 +1,74 @@
+large-screen = 1080px
+middle-screen = 815px
+small-screen = 640px
+body-text-color = #555555
+font-weight-normal = 400
+font-weight-bold = 700
+
+color-back-activ = #fd926d
+hot-menu-height = 45px
+
+.hot-sales
+  .hot-menu
+    .hot-buttons
+      margin 0px
+      padding 0px
+      border-width 0px
+      display flex
+      @media screen and (max-width: small-screen)
+        flex-flow column
+        width 100%
+        display none
+      a
+        height: hot-menu-height
+        display inline-block
+        text-transform uppercase
+        padding-left 15px
+        padding-right 15px
+        &.active
+          background-color color-back-activ
+          color #ffffff
+        &:link
+        &:visited
+          text-decoration none
+          color: body-text-color
+        &:hover
+          text-decoration underline
+        span
+          display block
+          position relative
+          top 50%
+          margin-top: -0.5em
+
+    .hot-leftrigth
+      margin-left: auto
+      height hot-menu-height
+      padding 0px
+      border-width 0px
+      display flex
+      @media screen and (max-width: small-screen)
+        display none
+      a
+        display block
+        text-align: center
+        background-color #f2f2f2
+        width hot-menu-height
+        height hot-menu-height
+        margin 0px
+        padding 0px
+        border-width 0px
+        &.active
+          background-color #fd926d
+          color #ffffff
+        i.icon
+          cursor pointer
+          display block
+          position relative
+          top 50%
+          margin-top: -0.5em
+          font-size 45px
+
+  .hot-positions
+    height 455px
+    background-color #fd926d
+    overflow hidden
