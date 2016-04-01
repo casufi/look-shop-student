@@ -18,27 +18,36 @@ hot-menu-height = 45px
       @media screen and (max-width: small-screen)
         flex-flow column
         width 100%
-        display none
       a
         height: hot-menu-height
-        display inline-block
+        display: flex
+        align-items: center
+        justify-content: space-between
         text-transform uppercase
         padding-left 15px
         padding-right 15px
-        &.active
-          background-color color-back-activ
-          color #ffffff
+        i.icon
+          display none
+        @media screen and (max-width: small-screen)
+          width 100%
+          display none
         &:link
         &:visited
           text-decoration none
           color: body-text-color
         &:hover
           text-decoration underline
-        span
-          display block
-          position relative
-          top 50%
-          margin-top: -0.5em
+        &.active
+          background-color color-back-activ
+          color #ffffff
+          @media screen and (max-width: small-screen)
+            background-color: #f4845d
+            color: #fff
+            width 100%
+            display flex
+            i.icon
+              display inline-block
+              font-size 1.6em
 
     .hot-leftrigth
       margin-left: auto
