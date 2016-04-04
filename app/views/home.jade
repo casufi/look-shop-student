@@ -13,17 +13,17 @@ div.user-toolbox.full-flex-container
 header.menu-box.full-flex-container
   img.shop-logo(ng-src="images/logo.png")
   nav.top-menu
-    a.menu-item.menu-header menu
-      i.icon.mdi.mdi-menu
-    a.menu-item new
+    a.menu-item.menu-header(ng-class="{open: opened}") menu
+      i.icon.mdi.mdi-menu(ng-click="opened=!opened")
+    a.menu-item(ng-class="{open: opened}") new
       i.icon.mdi.mdi-menu-down
-    a.menu-item designers
+    a.menu-item(ng-class="{open: opened}") designers
       i.icon.mdi.mdi-menu-down
-    a.menu-item women
+    a.menu-item(ng-class="{open: opened}") women
       i.icon.mdi.mdi-menu-down
-    a.menu-item men
+    a.menu-item(ng-class="{open: opened}") men
       i.icon.mdi.mdi-menu-down
-    a.menu-item clearence
+    a.menu-item(ng-class="{open: opened}") clearence
       i.icon.mdi.mdi-menu-down
 
   div.cart-box
@@ -85,14 +85,15 @@ div.promo-boxes
 div.hot-sales
   div.hot-menu.full-flex-container
     menu.hot-buttons
-      a.active(ng-href="1")
+      a.active(ng-class="{open: opened2}")
         span what`s hot
-        i.icon.mdi.mdi-menu
-      a(ng-href="2")
+        i.icon.mdi.mdi-menu(ng-click="opened2=!opened2")
+        //have to place .icon.mdi.mdi-menu on the active tab
+      a(ng-href="2" ng-class="{open: opened2}")
         span designers
-      a(ng-href="3")
+      a(ng-href="3" ng-class="{open: opened2}")
         span featured
-      a(ng-href="4")
+      a(ng-href="4" ng-class="{open: opened2}")
         span latest
     nav.hot-leftrigth
       a.hot-left.active
@@ -198,22 +199,20 @@ footer.footer-full
       img(ng-src="images/Secured.png")
   div.footer-short.full-flex-container
     nav.footer-short-links
-      a.menu-header
-        span menu
-        i.icon.mdi.mdi-menu
-      a(ng-href="1")
+      a(ng-href="1" ng-class="{open: opened1}")
         span Privacy & Coolies
-      a(ng-href="1")
+      a(ng-href="1" ng-class="{open: opened1}")
         span Terms & Conditions
-      a(ng-href="1")
+      a(ng-href="1" ng-class="{open: opened1}")
         span Accessibility
-      a(ng-href="1")
+      a(ng-href="1" ng-class="{open: opened1}")
         span Store Directory
-      a(ng-href="1")
+      a(ng-href="1" ng-class="{open: opened1}")
         span About Us
+      a.menu-header(ng-class="{open: opened1}")
+        span menu
+        i.icon.mdi.mdi-menu(ng-click="opened1=!opened1")
+
     div.footer-short-cr
       span &copy;LookShop.com
       span All Rights Reserved
-
-
-

@@ -101,6 +101,11 @@ user-toolbox-height=30px
         height: 56px
         display: none
         text-transform uppercase
+        &.open
+          display flex
+          align-items: center
+          justify-content: space-between
+          border-bottom: 1px solid #d6d6d6;
       .icon
         margin-left: 5px
     a.menu-header
@@ -111,9 +116,10 @@ user-toolbox-height=30px
         justify-content: space-between
         background-color: #fd926d
         color #fff
+        &.open
+          border-bottom: 1px solid #fff;
         i
           font-size 1.6em
-
 
   .cart-box
     width: 214px

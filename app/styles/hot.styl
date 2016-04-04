@@ -29,8 +29,14 @@ hot-menu-height = 45px
         i.icon
           display none
         @media screen and (max-width: small-screen)
+          height: 74px;
           width 100%
           display none
+          &.open
+            display flex
+            align-items: center
+            justify-content: space-between
+            border-bottom: 1px solid #555
         &:link
         &:visited
           text-decoration none
@@ -45,6 +51,8 @@ hot-menu-height = 45px
             color: #fff
             width 100%
             display flex
+            &.open
+              border-bottom: 1px solid #fff
             i.icon
               display inline-block
               font-size 1.6em
