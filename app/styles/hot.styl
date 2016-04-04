@@ -32,7 +32,10 @@ hot-menu-height = 45px
           height: 74px;
           width 100%
           display none
+          &:not(.active)
+            opacity: 0
           &.open
+            opacity: 1
             display flex
             align-items: center
             justify-content: space-between
