@@ -29,13 +29,14 @@ hot-menu-height = 45px
         i.icon
           display none
         @media screen and (max-width: small-screen)
-          height: 74px;
+          height: 74px
           width 100%
-          display none
-          &:not(.active)
+          &:not(.active):not(.open)
             opacity: 0
+            height: 0px
+            display none
+            overflow: hidden
           &.open
-            opacity: 1
             display flex
             align-items: center
             justify-content: space-between
