@@ -6,57 +6,57 @@ font-weight-normal = 400
 font-weight-bold = 700
 
 .positions
-  position relative
-  left -12%
-  display flex
-  flex-flow row nowrap
-  background transparent
-  height 100%
-  width 150%
-  margin-right auto
-  margin-left auto
+  position: relative
+  left: -12%
+  display: flex
+  flex-flow: row nowrap
+  background: transparent
+  height: 100%
+  width: 150%
+  margin-right: auto
+  margin-left: auto
 
 .position
-  flex-shrink 0
-  position relative
-  background-color white
-  margin-top 25px
-  margin-bottom 25px
-  margin-left 15px
-  margin-right 15px
-  padding 0px
-  width 240px
+  flex-shrink: 0
+  position: relative
+  background-color: white
+  margin-top: 25px
+  margin-bottom: 25px
+  margin-left: 15px
+  margin-right: 15px
+  padding: 0px
+  width: 240px
   transition: transform 0.3s
   &:hover
     transform: scale(1.05, 1.05);
     transition: transform 0s
 
   .position-sale-corner
-    background-color black
-
+    background-color: black
 
   img
-    margin 0px
-    width 100%
-    height auto
+    margin: 0px
+    width: 100%
+    height: auto
   .position-label
-    text-align center
-    padding-top 15px
-    background-color #f7f7f7
-    position absolute
-    bottom 0
+    text-align: center
+    padding-top: 15px
+    background-color: #f7f7f7
+    position: absolute
+    bottom: 0
     width: 100%
     height: 105px
-    justify-content center
+    justify-content: center
+
     .position-name
-      text-transform uppercase
+      text-transform: uppercase
       color: #373737
       font-size: 0.857em
       letter-spacing: -0.01em
-      width 100%
+      width: 100%
 
     .position-button
-      cursor pointer
+      cursor: pointer
       width: 140px
       height: 32px
       background-color: #ff8d72
@@ -65,13 +65,15 @@ font-weight-bold = 700
       margin-right: auto
       position: relative
       &:hover
-        border-width 2px
-        border-color black
+        border-width: 2px
+        border-color: black
+
       i.icon
       span
-        display inline-block
-        color #ffffff
-        position relative
-        top 50%
-        transform: translateY(-0.6em)
-        text-transform uppercase
+        display: inline-block
+        color: #ffffff
+        position: relative
+        top: 50%
+        //Why 0.7 not 0.5
+        transform: translateY(-0.7em)
+        text-transform: uppercase

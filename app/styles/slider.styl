@@ -5,16 +5,15 @@
   width 100%
   background-color: #f6f3ec
   position: relative
-  text-align center
+  text-align: center
 .slider-image>img
-    max-width 1200px
-    width 100%
-    height auto
-
+    max-width: 1200px
+    width: 100%
+    height: auto
 
 .slider
   position: absolute
-  display table-cell
+  display: table-cell
   width: 30px
   height: 118px
   top: 50%
@@ -22,7 +21,7 @@
   background-color: rgba(255, 255, 255, 0.9);
   padding-top: 50px
   text-align: center
-  cursor pointer
+  cursor: pointer
   &.left
     left: 0px
   &.right
@@ -34,19 +33,19 @@ slider-track-height = 75px
   display: flex
   justify-content: center
   a
-    height slider-track-height
-    display block
-    position relative
-    i
-      display block
-      height slider-track-height
-      position relative
-      top 50%
-      margin-top: -0.5em;
+    height: slider-track-height
+    display: block
+    position: relative
+    i.icon
+      display: block
+      height: slider-track-height
+      position: relative
+      top: 50%
+      transform: translateY(-0.5em)
       background-color: transparent
       width: 30px
-      text-align center
+      text-align: center
       &.selected
-        color #fd926d
+        color: #fd926d
       &.icon
-        cursor pointer
+        cursor: pointer

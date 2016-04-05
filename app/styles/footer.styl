@@ -5,7 +5,10 @@ body-text-color = #555555
 font-weight-normal = 400
 font-weight-bold = 700
 
+footer-short-base-color = #8d8d8d
 footer-text-color=#544e4d
+full-size-menu-height = 56px
+
 .footer-full
   position: relative
   padding-bottom: 74px
@@ -13,27 +16,25 @@ footer-text-color=#544e4d
   overflow: hidden
 
 .payments-box
-  position relative
-  text-align center
+  position: relative
+  text-align: center
   background-color: #f7f7f7;
   height: 58px
-  padding-top 20px
+  padding-top: 20px
   span
-    display inline-block
-    position relative
+    display: inline-block
+    position: relative
     transform: translateY(-0.5em)
-    margin-right 20px
+    margin-right: 20px
   img
-    display inline-block
-    position relative
+    display: inline-block
+    position: relative
 
 .footer-main
-  background-color #ededed
-  display flex
+  background-color: #ededed
+  display: flex
   align-items: flex-start
-  min-height 160px
-  @media screen and (max-width: small-screen)
-    flex-flow column
+  min-height: 160px
 
   h2
     font-size: 1.143em
@@ -41,21 +42,20 @@ footer-text-color=#544e4d
     letter-spacing: -0.01em
     line-height: 1.25
     text-align: left
-    margin-top 0px
-    margin-bottom 5px
-
+    margin-top: 0px
+    margin-bottom: 5px
 
   .footer-links
-    display flex
-    height 100%
+    display: flex
+    height: 100%
     .footer-link
       color: footer-text-color
-      padding-left 30px
-      padding-right 30px
-      padding-top 15px
-      padding-bottom 30px
+      padding-left: 30px
+      padding-right: 30px
+      padding-top: 15px
+      padding-bottom: 30px
       a
-        display block
+        display: block
         font-size: 0.857em
         line-height: 1.5
         text-align: left
@@ -65,103 +65,109 @@ footer-text-color=#544e4d
           text-decoration: none
         &:hover
           text-decoration: underline
-    @media screen and (max-width: small-screen)
-      flex-flow column
 
   .footer-social
     width: 200px
-    height 100%
+    height: 100%
     color: footer-text-color
-    padding-left 30px
-    padding-right 30px
-    padding-top 15px
-    padding-bottom 30px
+    padding-left: 30px
+    padding-right: 30px
+    padding-top: 15px
+    padding-bottom: 30px
     .footer-social-icons
-      display flex
-      flex-flow row wrap
+      display: flex
+      flex-flow: row wrap
       a.round-social
-        text-align center
-        flex-shrink 0
-        padding 0px
-        margin 5px
-        display block
+        text-align: center
+        flex-shrink: 0
+        padding: 0px
+        margin: 5px
+        display: block
         background-color: #4c4c4b
-        width 35px
-        height 35px
-        border-radius 50%
+        width: 35px
+        height: 35px
+        border-radius: 50%
         &:hover
           transform: scale(1.1, 1.1)
         .icon
-          display inline-block
-          position relative
-          top 50%
+          display: inline-block
+          position: relative
+          top: 50%
           transform: translateY(-0.5em)
           font-size: 1.5em
           color #ffffff
 
   .footer-logo
-    padding-left 30px
-    padding-right 30px
-    padding-top 15px
-    padding-bottom 30px
-    @media screen and (max-width: small-screen)
-      padding-bottom 80px
+    padding-left: 30px
+    padding-right: 30px
+    padding-top: 15px
+    padding-bottom: 30px
 
-
-footer-short-base-color = #8d8d8d
 .footer-short
-  background-color #000000
-  width 100%
+  background-color: #000000
+  width: 100%
   position: absolute
   bottom: 0
   color: footer-short-base-color
   font-size: 0.786em
   line-height: 1.818
-  @media screen and (max-width: small-screen)
-    flex-flow column
   .footer-short-links
-    @media screen and (max-width: small-screen)
-      border-top 1px solid white
-      order: 2
-      flex-flow column
-      width 100%
     a
       height: 74px
-      padding-left 10px
-      padding-right 10px
-      border-left 1px solid #8d8d8d
+      padding-left: 10px
+      padding-right: 10px
+      border-left: 1px solid #8d8d8d
       &:first-child
-        border-left 0px
+        border-left: 0px
       &:link
       &:visited
         color: footer-short-base-color
-        text-decoration none
+        text-decoration: none
       &:hover
-        text-decoration underline
-      @media screen and (max-width: small-screen)
-        border-left: 0px;
-        text-transform: uppercase
-        width: 100%
-        display: none
-        &.open
-          display flex
-          align-items: center
-          justify-content: space-between
-          border-bottom: 1px solid #fff
+        text-decoration: underline
 
-    a.menu-header
-      display: none
-      i.icon
-        font-size 1.6em
-        margin-right 10px
-      @media screen and (max-width: small-screen)
-        display flex
-        align-items: center
-        justify-content: space-between
+      &.menu-header
+        display: none
 
   .footer-short-cr
     height: 74px
-    margin-left auto
+    margin-left: auto
     span
-      display block
+      display: block
 
+@media screen and (max-width: small-screen)
+  .footer-main
+    flex-flow: column
+    .footer-links
+      flex-flow: column
+    .footer-logo
+      padding-bottom: 90px
+  .footer-short
+    flex-flow: column
+    .footer-short-links
+      border-top: 1px solid white
+      order: 2
+      flex-flow: column
+      width: 100%
+      a
+        border-left: 0px
+        text-transform: uppercase
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: space-between
+        height: full-size-menu-height
+        &:not(.open):not(.menu-header)
+          height: 0px
+          visibility: hidden
+          border: 0px
+          transition: height 50ms
+        &.open
+          transition: height 300ms
+          border-bottom: 1px solid #fff
+          visibility: visible
+        &.menu-header
+          display: flex
+          i.icon
+            font-size: 1.6em
+            margin-right: 10px
