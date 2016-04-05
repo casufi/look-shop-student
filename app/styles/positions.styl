@@ -32,7 +32,28 @@ font-weight-bold = 700
     transition: transform 0s
 
   .position-sale-corner
-    background-color: black
+    position: absolute
+    top: 0px
+    left: 0px
+    width: 50px
+    height: 50px
+    background-color: #4c4c4c
+    color: #fff
+    font-size: 0.714em
+    text-transform: uppercase
+    padding: 4px
+    &::before
+      content: ''
+      position: absolute
+      top: 0px
+      left: 0px
+      width: 0px
+      height: 0px
+      border-left: 25px solid transparent
+      border-top: 25px solid transparent
+      border-right: 25px solid white
+      border-bottom: 25px solid white
+
 
   img
     margin: 0px
