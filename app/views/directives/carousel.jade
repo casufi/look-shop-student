@@ -1,13 +1,7 @@
 div.carousel-promo
   div.carousel-image
     div.local-wrapper
-      img(ng-src="res/slider1.png" ng-class="{active: 1}")
-      //
-        img(ng-src="res/slider1.png")
-        img(ng-src="res/slider1.png")
-        img(ng-src="res/slider1.png")
-        img(ng-src="res/slider1.png")
-        img(ng-src="res/slider1.png")
+      img(ng-repeat="image in images" ng-src="{{image}}" ng-class="{active: $first}")
       div.carousel.left
         img(ng-src="images/ArrowLeft.png")
       div.carousel.right
