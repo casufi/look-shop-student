@@ -104,48 +104,50 @@ user-toolbox-height=30px
 full-size-menu-height = 56px
 @media screen and (max-width: large-screen)
   .menu-box
-    .top-menu
-      .menu-item
-        padding-left: 5px
-        padding-right: 5px
+    .local-wrapper
+      .top-menu
+        .menu-item
+          padding-left: 5px
+          padding-right: 5px
 
 @media screen and (max-width: middle-screen)
   .menu-box
-    flex-flow row wrap
-    img.shop-logo
-      order: 1
-    .cart-box
-      order: 2
-      margin-left auto
-    .top-menu
-      order: 3
-      flex-flow column
-      width 100%
-      .menu-item
-        width: 100%
-        height: full-size-menu-height
-        display: flex
-        align-items: center
-        justify-content: space-between
-        border-bottom: 1px solid #d6d6d6
-        text-transform uppercase
-        overflow: hidden
-        &:not(.open):not(.menu-header)
-          visibility hidden
-          height 0px
-          border-bottom: 0px
-          transition height 50ms
-        &.open
-          visibility visible
-          transition height 300ms
-        .icon
-          margin-left: 5px
-      .menu-header
-        background-color: #fd926d
-        color #fff
-        border-bottom: 1px solid #fff;
-        i
-          font-size 1.6em
+    .local-wrapper
+      flex-flow row wrap
+      img.shop-logo
+        order: 1
+      .cart-box
+        order: 2
+        margin-left auto
+      .top-menu
+        order: 3
+        flex-flow column
+        width 100%
+        .menu-item
+          width: 100%
+          height: full-size-menu-height
+          display: flex
+          align-items: center
+          justify-content: space-between
+          border-bottom: 1px solid #d6d6d6
+          text-transform uppercase
+          overflow: hidden
+          &:not(.open):not(.menu-header)
+            visibility hidden
+            height 0px
+            border-bottom: 0px
+            transition height 50ms
+          &.open
+            visibility visible
+            transition height 300ms
+          .icon
+            margin-left: 5px
+        .menu-header
+          background-color: #fd926d
+          color #fff
+          border-bottom: 1px solid #fff;
+          i
+            font-size 1.6em
 
 @media screen and (max-width: small-screen)
   .user-toolbox

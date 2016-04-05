@@ -32,9 +32,11 @@ full-size-menu-height = 56px
 
 .footer-main
   background-color: #ededed
-  display: flex
-  align-items: flex-start
   min-height: 160px
+
+  .local-wrapper
+    display: flex
+    flex-flow: row wrap
 
   h2
     font-size: 1.143em
@@ -109,7 +111,7 @@ full-size-menu-height = 56px
   position: absolute
   bottom: 0
   color: footer-short-base-color
-  font-size: 0.786em
+  font-size:0.86em
   line-height: 1.818
   .footer-short-links
     a
@@ -137,37 +139,39 @@ full-size-menu-height = 56px
 
 @media screen and (max-width: small-screen)
   .footer-main
-    flex-flow: column
-    .footer-links
+    .local-wrapper
       flex-flow: column
-    .footer-logo
-      padding-bottom: 90px
+      .footer-links
+        flex-flow: column
+      .footer-logo
+        padding-bottom: 90px
   .footer-short
-    flex-flow: column
-    .footer-short-links
-      border-top: 1px solid white
-      order: 2
+    .local-wrapper
       flex-flow: column
-      width: 100%
-      a
-        border-left: 0px
-        text-transform: uppercase
+      .footer-short-links
+        border-top: 1px solid white
+        order: 2
+        flex-flow: column
         width: 100%
-        display: flex
-        align-items: center
-        justify-content: space-between
-        height: full-size-menu-height
-        &:not(.open):not(.menu-header)
-          height: 0px
-          visibility: hidden
-          border: 0px
-          transition: height 50ms
-        &.open
-          transition: height 300ms
-          border-bottom: 1px solid #fff
-          visibility: visible
-        &.menu-header
+        a
+          border-left: 0px
+          text-transform: uppercase
+          width: 100%
           display: flex
-          i.icon
-            font-size: 1.6em
-            margin-right: 10px
+          align-items: center
+          justify-content: space-between
+          height: full-size-menu-height
+          &:not(.open):not(.menu-header)
+            height: 0px
+            visibility: hidden
+            border: 0px
+            transition: height 50ms
+          &.open
+            transition: height 300ms
+            border-bottom: 1px solid #fff
+            visibility: visible
+          &.menu-header
+            display: flex
+            i.icon
+              font-size: 1.6em
+              margin-right: 10px
