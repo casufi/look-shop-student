@@ -13,81 +13,51 @@ user-toolbox-height=30px
   font-size: 0.786em
   letter-spacing: -0.005em
   text-transform: uppercase
-  @media screen and (max-width: small-screen)
-    flex-flow column
 
   .care-info
     display flex
     align-items: center
     justify-content: center
-    @media screen and (max-width: small-screen)
-      height: user-toolbox-height
-      width 100%
-      text-align center
-      background-color: #fafafa
-      color: body-text-color
 
-
-.shop-settings
-  height: user-toolbox-height
-  display: flex
-  align-items: center
-  margin-left: auto
-  @media screen and (max-width: small-screen)
-    width 100%
-    margin-right: auto
-
-  div
-    text-align: center
-    height: 100%
-    border-width: 1px
-    border-color: #444444
-    border-style: solid
+  .shop-settings
+    height: user-toolbox-height
     display: flex
     align-items: center
-    justify-content: center
+    margin-left: auto
+
+    div
+      text-align: center
+      height: 100%
+      border-width: 1px
+      border-color: #444444
+      border-style: solid
+      display: flex
+      align-items: center
+      justify-content: center
 
 
-  .currency-select
-    width: 70px
+    .currency-select
+      width: 70px
 
-  .account-button
-    width: 127px
-    i.icon
-      font-size: 1.6em
-      color: #666666
+    .account-button
+      width: 127px
+      i.icon
+        font-size: 1.6em
+        color: #666666
 
-  .search-button
-    width: 35px
-    i.icon
-      font-size: 1.6em
+    .search-button
+      width: 35px
+      i.icon
+        font-size: 1.6em
 
 .menu-box
-  @media screen and (max-width: middle-screen)
-    flex-flow row wrap
-    img
-      order: 1
-    .cart-box
-      order: 2
-    .top-menu
-      order: 3
-  @media screen and (max-width: small-screen)
-    justify-content: center
-
   img.shop-logo
     height: 33px
     width: auto
-    @media screen and (max-width: small-screen)
-      margin 20px 0px
-
-
   .top-menu
     display: flex
     margin-left: auto
-    @media screen and (max-width: middle-screen)
-      flex-flow column
-      width 100%
-    a.menu-item
+    .menu-item
       cursor pointer
       height: 28px
       padding-left: 15px
@@ -95,42 +65,9 @@ user-toolbox-height=30px
       display: block
       font-size: 1.143em;
       color: #000000
-      @media screen and (max-width: large-screen)
-        padding-left: 5px
-        padding-right: 5px
-      @media screen and (max-width: middle-screen)
-        width: 100%
-        height: 56px
-        display: none
-        text-transform uppercase
-        &.open
-          display flex
-          align-items: center
-          justify-content: space-between
-          border-bottom: 1px solid #d6d6d6
-      .icon
-        margin-left: 5px
-      /*
-      .menu-transition
-      @media screen and (max-width: middle-screen)
-      transition all 500ms
-      opacity: 1
-        &:not(.open)
-          opacity: 0
-          height 0px
-      */
-    a.menu-header
+
+    .menu-header
       display none
-      @media screen and (max-width: middle-screen)
-        display: flex
-        align-items: center
-        justify-content: space-between
-        background-color: #fd926d
-        color #fff
-        &.open
-          border-bottom: 1px solid #fff;
-        i
-          font-size 1.6em
 
   .cart-box
     width: 214px
@@ -138,12 +75,6 @@ user-toolbox-height=30px
     font-size: 0.857em
     letter-spacing: +0.055em
     margin 30px 0px
-    @media screen and (max-width: middle-screen)
-      margin-left auto
-    @media screen and (max-width: small-screen)
-      width 100%
-      margin 0px 0px
-
 
     .cart-button
       height: 33px
@@ -152,9 +83,6 @@ user-toolbox-height=30px
       align-items: center
       padding-left: 10px
       padding-right: 10px
-      @media screen and (max-width: small-screen)
-        display none
-
       i.icon
         display: block
         margin-left: auto
@@ -168,9 +96,78 @@ user-toolbox-height=30px
       align-items: center
       padding-left: 10px
       padding-right: 10px
-      @media screen and (max-width: small-screen)
-        height: 56px
       i.icon
         font-size: 1.6em
       span.total
         margin-left: auto
+
+full-size-menu-height = 56px
+@media screen and (max-width: large-screen)
+  .menu-box
+    .top-menu
+      .menu-item
+        padding-left: 5px
+        padding-right: 5px
+
+@media screen and (max-width: middle-screen)
+  .menu-box
+    flex-flow row wrap
+    img.shop-logo
+      order: 1
+    .cart-box
+      order: 2
+      margin-left auto
+    .top-menu
+      order: 3
+      flex-flow column
+      width 100%
+      .menu-item
+        width: 100%
+        height: full-size-menu-height
+        display: flex
+        align-items: center
+        justify-content: space-between
+        border-bottom: 1px solid #d6d6d6
+        text-transform uppercase
+        overflow: hidden
+        &:not(.open):not(.menu-header)
+          visibility hidden
+          height 0px
+          border-bottom: 0px
+          transition height 50ms
+        &.open
+          visibility visible
+        .icon
+          margin-left: 5px
+      .menu-header
+        background-color: #fd926d
+        color #fff
+        border-bottom: 1px solid #fff;
+        i
+          font-size 1.6em
+      .menu-transition
+        transition height 500ms
+
+@media screen and (max-width: small-screen)
+  .user-toolbox
+    flex-flow column
+    .care-info
+      height: user-toolbox-height
+      width 100%
+      text-align center
+      background-color: #fafafa
+      color: body-text-color
+    .shop-settings
+      width 100%
+      margin-right: auto
+  .menu-box
+    justify-content: center
+    img.shop-logo
+      margin 20px 0px
+    .cart-box
+      width 100%
+      margin 0px 0px
+      .cart-button
+        display none
+      .cart-totall
+        height: full-size-menu-height
