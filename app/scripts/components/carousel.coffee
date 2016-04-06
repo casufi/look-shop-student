@@ -31,6 +31,10 @@ mlsCarouselController = ()->
     return undefined
 
   @setActiveIndex = (index) ->
+    if ctrl.activeimage > index
+      ctrl.direct = 'left'
+    if ctrl.activeimage < index
+      ctrl.direct = 'right'
     ctrl.activeimage=index
     return undefined
 
