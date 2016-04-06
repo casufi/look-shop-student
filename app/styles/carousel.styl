@@ -6,26 +6,61 @@
   background-color: #ededed
   position: relative
   text-align: center
+  overflow: hidden
 
-.carousel-image
-  .local-wrapper > img
-    width: 100%
-    height: auto
-    margin: 0px
-    &.ng-animate
-      transition:300ms linear all
-    &.active-add
-      opacity:0
-    &.active
-      opacity:1
-    &.active-remove
-      opacity:0
-    &:not(.active)
+.carousel-image  .local-wrapper
+    overflow: hidden
+
+    &>img
       display block
-      position absolute
-      top: 0
-      left: 0
-      opacity:0
+      position relative
+      width: 100%
+      height: auto
+      margin: 0px
+
+      &.left.ng-enter
+        position relative
+        transform: translateX(100%)
+        transition: transform 500ms linear
+
+      &.left.ng-enter.ng-enter-active
+        position relative
+        transform: translateX(0)
+
+      &.left.ng-leave
+        position absolute
+        top: 0
+        left: 0
+        opacity: 1
+        transition:opacity 500ms linear
+
+      &.left.ng-leave.ng-leave-active
+        position absolute
+        top: 0
+        left: 0
+        opacity: 0
+
+      &.right.ng-enter
+        position relative
+        transform: translateX(-100%)
+        transition: transform 500ms linear
+
+      &.right.ng-enter.ng-enter-active
+        position relative
+        transform: translateX(0)
+
+      &.right.ng-leave
+        position absolute
+        top: 0
+        left: 0
+        opacity: 1
+        transition:opacity 500ms linear
+
+      &.right.ng-leave.ng-leave-active
+        position absolute
+        top: 0
+        left: 0
+        opacity: 0
 
 .carousel
   position: absolute
@@ -38,8 +73,10 @@
   padding-top: 50px
   text-align: center
   cursor: pointer
+
   &.left
     left: 0px
+
   &.right
     right: 0px
 
@@ -48,10 +85,12 @@ carousel-track-height = 75px
   height: carousel-track-height
   display: flex
   justify-content: center
+
   a
     height: carousel-track-height
     display: block
     position: relative
+
     i.icon
       display: block
       height: carousel-track-height
@@ -61,7 +100,9 @@ carousel-track-height = 75px
       background-color: transparent
       width: 30px
       text-align: center
+
       &.active
         color: #fd926d
+
       &.icon
         cursor: pointer

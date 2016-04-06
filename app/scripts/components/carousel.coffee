@@ -1,11 +1,12 @@
 mlsCarouselController = ()->
   @images = [
     {url:"res/slider1.png"},
+    {url:"res/Placeholder2.jpeg"},
     {url:"http://placekitten.com/1200/440"},
-    {url:"https://placeholdit.imgix.net/~text?txtsize=300&txt=place&w=1200&h=440&fm=png"},
-    #{url:"http://placeboobs.com/1200/440"}
+    {url:"https://placeholdit.imgix.net/~text?txtsize=300&txt=place&w=1200&h=440&fm=png"}
   ]
   @activeimage = 0
+  @direct = ''
   ctrl = this
 
   @isActiveImg = (index) ->
@@ -16,12 +17,14 @@ mlsCarouselController = ()->
       return false
 
   @setActiveNext = ->
+    ctrl.direct = 'right'
     ctrl.activeimage++
     if ctrl.activeimage >= ctrl.images.length
       ctrl.activeimage = 0
     return undefined
 
   @setActivePrevious = ->
+    ctrl.direct = 'left'
     ctrl.activeimage--
     if ctrl.activeimage < 0
       ctrl.activeimage = ctrl.images.length - 1
