@@ -10,8 +10,16 @@ mlsCarouselController = ()->
   ctrl = this
 
   @isActiveImg = (index) ->
-    console.log({"index":index,"activeimage":ctrl.activeimage, "result":ctrl.activeimage == index})
     if ctrl.activeimage == index
+      return true
+    else
+      return false
+
+  # Now preload all images
+  @isCacheImg = (index) ->
+    return true
+
+    if ctrl.activeimage == index || ctrl.activeimage+1 == index||ctrl.activeimage-1 == index||(ctrl.activeimage == 0 && index == ctrl.images.length-1)||(ctrl.activeimage == ctrl.images.length-1 && index == 0)
       return true
     else
       return false
