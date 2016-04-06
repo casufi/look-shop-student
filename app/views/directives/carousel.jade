@@ -1,21 +1,13 @@
 div.carousel-promo
-  div.carousel-image
+  div.carousel-image(ng-if="$ctrl.images.length")
     div.local-wrapper
-      img(ng-repeat="image in $ctrl.images" ng-src="{{image.url}}" ng-class="{active: image.active}")
-      div.carousel.left
+      img(ng-repeat="image in $ctrl.images" ng-src="{{image.url}}" ng-class="{active: $ctrl.isActiveImg($index)}")
+      div.carousel.left(ng-click="$ctrl.setActivePrevious()")
         img(ng-src="images/ArrowLeft.png")
-      div.carousel.right
+      div.carousel.right(ng-click="$ctrl.setActiveNext()")
         img(ng-src="images/ArrowRight.png")
       div.carousel-action
   div.local-wrapper
     nav.carousel-track
-      a
-        i.icon.mdi.mdi-record
-      a
-        i.icon.mdi.mdi-record.selected
-      a
-        i.icon.mdi.mdi-record
-      a
-        i.icon.mdi.mdi-record
-      a
-        i.icon.mdi.mdi-record
+      a(ng-repeat="image in $ctrl.images" ng-click="$ctrl.setActiveIndex($index)")
+        i.icon.mdi.mdi-record(ng-class="{active: $ctrl.isActiveImg($index)}")

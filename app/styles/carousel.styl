@@ -12,8 +12,20 @@
     width: 100%
     height: auto
     margin: 0px
+    &.ng-animate
+      transition:300ms linear all
+    &.active-add
+      opacity:0
+    &.active
+      opacity:1
+    &.active-remove
+      opacity:0
     &:not(.active)
-      display: none
+      display block
+      position absolute
+      top: 0
+      left: 0
+      opacity:0
 
 .carousel
   position: absolute
@@ -49,7 +61,7 @@ carousel-track-height = 75px
       background-color: transparent
       width: 30px
       text-align: center
-      &.selected
+      &.active
         color: #fd926d
       &.icon
         cursor: pointer
