@@ -1,6 +1,6 @@
 div.carousel-promo
   div.carousel-image(ng-if="$ctrl.images.length")
-    div.local-wrapper
+    div.local-wrapper(ng-swipe-left="$ctrl.setActivePrevious()" ng-swipe-right="$ctrl.setActiveNext()")
       img(ng-repeat="image in $ctrl.images" ng-class="[$ctrl.direct , {active:$ctrl.isActiveImg($index)}]" ng-src="{{image.url}}" ng-if="$ctrl.isCacheImg($index)")
       div.carousel.left(ng-click="$ctrl.setActivePrevious()")
         img(ng-src="images/ArrowLeft.png")

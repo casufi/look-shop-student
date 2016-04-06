@@ -3,4 +3,5 @@ app = angular.module('shopLook', [
   'ngResource'
   'ngRoute'
   'ngAnimate'
+  'ngTouch'
 ])
