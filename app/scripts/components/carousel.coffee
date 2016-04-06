@@ -3,7 +3,7 @@ mlsCarouselController = ()->
     {url:"res/slider1.png"},
     {url:"res/Placeholder2.jpeg"},
     {url:"http://placekitten.com/1200/440"},
-    {url:"http://placeholdit.imgix.net/~text?txtsize=300&txt=place&w=1200&h=440&fm=png"}
+    {url:"https://unsplash.it/1200/440/?random"}
   ]
   @activeimage = 0
   @direct = ''

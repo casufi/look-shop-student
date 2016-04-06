@@ -27,11 +27,11 @@
 
       &.left.active-add
         position relative
-        transform: translateX(100%)
+        transform: translateX(-100%)
 
       &.right.active-add
         position relative
-        transform: translateX(-100%)
+        transform: translateX(100%)
 
       &.active-remove
         display block
@@ -46,13 +46,14 @@
         position absolute
         top: 0
         left: 0
-        transform: translateX(-100%)
+        transform: translateX(100%)
 
       &.right:not(.active)
         position absolute
         top: 0
         left: 0
-        transform: translateX(100%)
+        transform: translateX(-100%)
+
 
 .carousel
   position: absolute
