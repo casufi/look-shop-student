@@ -51,12 +51,15 @@ user-toolbox-height=30px
         font-size: 1.6em
 
 .menu-box
+
   img.shop-logo
     height: 33px
     width: auto
+
   .top-menu
     display: flex
     margin-left: auto
+
     .menu-item
       cursor pointer
       height: 28px
@@ -83,6 +86,7 @@ user-toolbox-height=30px
       align-items: center
       padding-left: 10px
       padding-right: 10px
+
       i.icon
         display: block
         margin-left: auto
@@ -96,79 +100,93 @@ user-toolbox-height=30px
       align-items: center
       padding-left: 10px
       padding-right: 10px
+
       i.icon
         font-size: 1.6em
+
       span.total
         margin-left: auto
 
 full-size-menu-height = 56px
 @media screen and (max-width: large-screen)
-  .menu-box
-    .local-wrapper
-      .top-menu
-        .menu-item
-          padding-left: 5px
-          padding-right: 5px
+  .menu-box .local-wrapper .top-menu .menu-item
+    padding-left: 5px
+    padding-right: 5px
 
 @media screen and (max-width: middle-screen)
-  .menu-box
-    .local-wrapper
-      flex-flow row wrap
-      img.shop-logo
-        order: 1
-      .cart-box
-        order: 2
-        margin-left auto
-      .top-menu
-        order: 3
-        flex-flow column
-        width 100%
-        .menu-item
-          width: 100%
-          height: full-size-menu-height
-          display: flex
-          align-items: center
-          justify-content: space-between
-          border-bottom: 1px solid #d6d6d6
-          text-transform uppercase
-          overflow: hidden
-          &:not(.open):not(.menu-header)
-            visibility hidden
-            height 0px
-            border-bottom: 0px
-            transition height 50ms
-          &.open
-            visibility visible
-            transition height 300ms
-          .icon
-            margin-left: 5px
-        .menu-header
-          background-color: #fd926d
-          color #fff
-          border-bottom: 1px solid #fff;
-          i
-            font-size 1.6em
+  .menu-box .local-wrapper
+    flex-flow row wrap
+
+    img.shop-logo
+      order: 1
+
+    .cart-box
+      order: 2
+      margin-left auto
+
+    .top-menu
+      order: 3
+      flex-flow column
+      width 100%
+
+      .menu-item
+        width: 100%
+        height: full-size-menu-height
+        display: flex
+        align-items: center
+        justify-content: space-between
+        border-bottom: 1px solid #d6d6d6
+        text-transform uppercase
+        overflow: hidden
+
+        &:not(.open):not(.menu-header)
+          visibility hidden
+          height 0px
+          border-bottom: 0px
+          transition height 50ms
+
+        &.open
+          visibility visible
+          transition height 300ms
+
+        .icon
+          margin-left: 5px
+
+      .menu-header
+        background-color: #fd926d
+        color #fff
+        border-bottom: 1px solid #fff;
+
+        i
+          font-size 1.6em
 
 @media screen and (max-width: small-screen)
   .user-toolbox
     flex-flow column
+
     .care-info
       height: user-toolbox-height
       width 100%
       text-align center
       background-color: #fafafa
       color: body-text-color
+
     .shop-settings
       width 100%
       margin-right: auto
+
   .menu-box
     justify-content: center
+
     img.shop-logo
       margin 20px 0px
+
     .cart-box
       width 100%
       margin 0px 0px
+
       .cart-button
         display none
+
       .cart-totall
         height: full-size-menu-height

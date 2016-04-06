@@ -21,11 +21,13 @@ full-size-menu-height = 56px
   background-color: #f7f7f7;
   height: 58px
   padding-top: 20px
+
   span
     display: inline-block
     position: relative
     transform: translateY(-0.5em)
     margin-right: 20px
+
   img
     display: inline-block
     position: relative
@@ -50,21 +52,25 @@ full-size-menu-height = 56px
   .footer-links
     display: flex
     height: 100%
+
     .footer-link
       color: footer-text-color
       padding-left: 30px
       padding-right: 30px
       padding-top: 15px
       padding-bottom: 30px
+
       a
         display: block
         font-size: 0.857em
         line-height: 1.5
         text-align: left
+
         &:link
         &:visited
           color: footer-text-color
           text-decoration: none
+
         &:hover
           text-decoration: underline
 
@@ -76,9 +82,11 @@ full-size-menu-height = 56px
     padding-right: 30px
     padding-top: 15px
     padding-bottom: 30px
+
     .footer-social-icons
       display: flex
       flex-flow: row wrap
+
       a.round-social
         text-align: center
         flex-shrink: 0
@@ -89,8 +97,10 @@ full-size-menu-height = 56px
         width: 35px
         height: 35px
         border-radius: 50%
+
         &:hover
           transform: scale(1.1, 1.1)
+
         .icon
           display: inline-block
           position: relative
@@ -113,65 +123,76 @@ full-size-menu-height = 56px
   color: footer-short-base-color
   font-size:0.86em
   line-height: 1.818
-  .footer-short-links
-    a
-      height: 74px
-      padding-left: 10px
-      padding-right: 10px
-      border-left: 1px solid #8d8d8d
-      &:first-child
-        border-left: 0px
-      &:link
-      &:visited
-        color: footer-short-base-color
-        text-decoration: none
-      &:hover
-        text-decoration: underline
 
-      &.menu-header
-        display: none
+  .footer-short-links a
+    height: 74px
+    padding-left: 10px
+    padding-right: 10px
+    border-left: 1px solid #8d8d8d
+
+    &:first-child
+      border-left: 0px
+
+    &:link
+    &:visited
+      color: footer-short-base-color
+      text-decoration: none
+
+    &:hover
+      text-decoration: underline
+
+    &.menu-header
+      display: none
 
   .footer-short-cr
     height: 74px
     margin-left: auto
+
     span
       display: block
 
 @media screen and (max-width: small-screen)
-  .footer-main
-    .local-wrapper
+  .footer-main .local-wrapper
+    flex-flow: column
+
+    .footer-links
       flex-flow: column
-      .footer-links
-        flex-flow: column
-      .footer-logo
-        padding-bottom: 90px
-  .footer-short
-    .local-wrapper
+
+    .footer-logo
+      padding-bottom: 90px
+
+  .footer-short .local-wrapper
+    flex-flow: column
+
+    .footer-short-links
+      border-top: 1px solid white
+      order: 2
       flex-flow: column
-      .footer-short-links
-        border-top: 1px solid white
-        order: 2
-        flex-flow: column
+      width: 100%
+
+      a
+        border-left: 0px
+        text-transform: uppercase
         width: 100%
-        a
-          border-left: 0px
-          text-transform: uppercase
-          width: 100%
+        display: flex
+        align-items: center
+        justify-content: space-between
+        height: full-size-menu-height
+
+        &:not(.open):not(.menu-header)
+          height: 0px
+          visibility: hidden
+          border: 0px
+          transition: height 50ms
+
+        &.open
+          transition: height 300ms
+          border-bottom: 1px solid #fff
+          visibility: visible
+
+        &.menu-header
           display: flex
-          align-items: center
-          justify-content: space-between
-          height: full-size-menu-height
-          &:not(.open):not(.menu-header)
-            height: 0px
-            visibility: hidden
-            border: 0px
-            transition: height 50ms
-          &.open
-            transition: height 300ms
-            border-bottom: 1px solid #fff
-            visibility: visible
-          &.menu-header
-            display: flex
-            i.icon
-              font-size: 1.6em
-              margin-right: 10px
+          
+          i.icon
+            font-size: 1.6em
+            margin-right: 10px
