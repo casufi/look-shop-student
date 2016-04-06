@@ -15,6 +15,7 @@ hot-menu-height = 45px
       padding: 0px
       border-width: 0px
       display: flex
+
       a
         height: hot-menu-height
         display: flex
@@ -23,27 +24,21 @@ hot-menu-height = 45px
         text-transform: uppercase
         padding-left: 15px
         padding-right: 15px
+
         i.icon
           display: none
+
         &:link
         &:visited
           text-decoration: none
           color: body-text-color
+
         &:hover
           text-decoration: underline
+
         &.active
           background-color: color-back-activ
           color: #fff
-          @media screen and (max-width: small-screen)
-            background-color: #f4845d
-            color: #fff
-            width: 100%
-            display: flex
-            &.open
-              border-bottom: 1px solid #fff
-            i.icon
-              display: inline-block
-              font-size: 1.6em
 
     .hot-leftrigth
       margin-left: auto
@@ -51,8 +46,7 @@ hot-menu-height = 45px
       padding: 0px
       border-width: 0px
       display: flex
-      @media screen and (max-width: small-screen)
-        display: none
+
       a
         display: block
         text-align: center
@@ -62,9 +56,11 @@ hot-menu-height = 45px
         margin: 0px
         padding: 0px
         border-width: 0px
+
         &.active
           background-color: #fd926d
           color: #ffffff
+
         i.icon
           cursor: pointer
           display: block
@@ -85,6 +81,7 @@ full-size-menu-height = 56px
       .hot-buttons
         flex-flow: column
         width: 100%
+
         a
           height: full-size-menu-height
           width: 100%
@@ -92,12 +89,30 @@ full-size-menu-height = 56px
           align-items: center
           justify-content: space-between
           overflow: hidden
+
+          &.active
+            background-color: #f4845d
+            color: #fff
+            width: 100%
+            display: flex
+
+            &.open
+              border-bottom: 1px solid #fff
+
+            i.icon
+              display: inline-block
+              font-size: 1.6em
+
           &:not(.active):not(.open)
             border: 0px
             opacity: 0
             height: 0px
             overflow: hidden
             transition: height 50ms
+            
           &.open
             transition: height 300ms
             border-bottom: 1px solid #555
+
+      .hot-leftrigth
+        display: none
