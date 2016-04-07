@@ -1,4 +1,6 @@
 div.carousel-promo
+  div.nodisplay
+    img(ng-repeat="image in $ctrl.images" ng-src="{{image.url}}")
   div.carousel-image(ng-if="$ctrl.images.length")
     div.local-wrapper(ng-swipe-left="$ctrl.setActivePrevious()" ng-swipe-right="$ctrl.setActiveNext()")
       img(ng-repeat="image in $ctrl.images" ng-class="$ctrl.direct" ng-src="{{image.url}}" ng-if="$ctrl.isActiveImg($index)")
