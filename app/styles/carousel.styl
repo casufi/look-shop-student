@@ -9,51 +9,66 @@
   overflow: hidden
 
 .carousel-image  .local-wrapper
-    overflow: hidden
+  overflow: hidden
 
-    &>img
-      display none
+  &>img
+    width: 100%
+    height: auto
+    margin: 0px
+    display block
+    position relative
+
+    &.left.ng-enter
       position relative
-      width: 100%
-      height: auto
-      margin: 0px
+      transform: translateX(100%)
+      transition-property: transform
+      transition-duration: 500ms
 
-      &.active
-        display block
-        position relative
-        transform: translateX(0)
-        transition-property: transform
-        transition-duration: 500ms
+    &.left.ng-enter.ng-enter-active
+      position relative
+      transform: translateX(0px)
 
-      &.left.active-add
-        position relative
-        transform: translateX(-100%)
+    &.left.ng-leave
+      display block
+      position absolute
+      top: 0
+      left: 0
+      transform: translateX(0)
+      transition-property: transform
+      transition-duration: 500ms
 
-      &.right.active-add
-        position relative
-        transform: translateX(100%)
+    &.left.ng-leave.ng-leave-active
+      display block
+      position absolute
+      top: 0
+      left: 0
+      transform: translateX(-100%)
 
-      &.active-remove
-        display block
-        position absolute
-        top: 0
-        left: 0
-        transform: translateX(0)
-        transition-property: transform
-        transition-duration: 500ms
+    &.right.ng-enter
+      position relative
+      transform: translateX(-100%)
+      transition-property: transform
+      transition-duration: 500ms
 
-      &.left:not(.active)
-        position absolute
-        top: 0
-        left: 0
-        transform: translateX(100%)
+    &.right.ng-enter.ng-enter-active
+      position relative
+      transform: translateX(0px)
 
-      &.right:not(.active)
-        position absolute
-        top: 0
-        left: 0
-        transform: translateX(-100%)
+    &.right.ng-leave
+      display block
+      position absolute
+      top: 0
+      left: 0
+      transform: translateX(0)
+      transition-property: transform
+      transition-duration: 500ms
 
+    &.right.ng-leave.ng-leave-active
+      display block
+      position absolute
+      top: 0
+      left: 0
+      transform: translateX(100%)
 
 .carousel
   position: absolute
@@ -85,6 +100,7 @@ carousel-track-height = 75px
     position: relative
 
     i.icon
+      cursor: pointer
       display: block
       position: relative
       top: 50%
@@ -93,11 +109,9 @@ carousel-track-height = 75px
       width: 30px
       text-align: center
       font-size: 1.6em
+
       &::before
         padding 0
 
       &.active
         color: #fd926d
-
-      &.icon
-        cursor: pointer

@@ -6,7 +6,7 @@ mlsCarouselController = ()->
     {url:"https://unsplash.it/1200/440/?random"}
   ]
   @activeimage = 0
-  @direct = ''
+  @direct = 'left'
   ctrl = this
 
   @isActiveImg = (index) ->
