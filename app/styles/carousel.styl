@@ -8,27 +8,30 @@
   text-align: center
   overflow: hidden
 
-.carousel-image  .local-wrapper
-  overflow: hidden
+.carousel-image
+  .local-wrapper
+    overflow: hidden
 
-  &>img
-    width: 100%
-    height: auto
-    margin: 0px
-    display block
-    position relative
-
-    &.left.ng-enter
+    &>img
+      width: 100%
+      height: auto
+      margin: 0px
+      display block
       position relative
-      transform: translateX(100%)
+
+  &.left .local-wrapper
+
+    &>img.ng-enter
+      position relative
+      transform: translateX(-100%)
       transition-property: transform
       transition-duration: 500ms
 
-    &.left.ng-enter.ng-enter-active
+    &>img.ng-enter.ng-enter-active
       position relative
       transform: translateX(0px)
 
-    &.left.ng-leave
+    &>img.ng-leave
       display block
       position absolute
       top: 0
@@ -37,24 +40,26 @@
       transition-property: transform
       transition-duration: 500ms
 
-    &.left.ng-leave.ng-leave-active
+    &>img.ng-leave.ng-leave-active
       display block
       position absolute
       top: 0
       left: 0
-      transform: translateX(-100%)
+      transform: translateX(100%)
 
-    &.right.ng-enter
+  &.right .local-wrapper
+
+    &>img.ng-enter
       position relative
-      transform: translateX(-100%)
+      transform: translateX(100%)
       transition-property: transform
       transition-duration: 500ms
 
-    &.right.ng-enter.ng-enter-active
+    &>img.ng-enter.ng-enter-active
       position relative
       transform: translateX(0px)
 
-    &.right.ng-leave
+    &>img.ng-leave
       display block
       position absolute
       top: 0
@@ -63,12 +68,12 @@
       transition-property: transform
       transition-duration: 500ms
 
-    &.right.ng-leave.ng-leave-active
+    &>img.ng-leave.ng-leave-active
       display block
       position absolute
       top: 0
       left: 0
-      transform: translateX(100%)
+      transform: translateX(-100%)
 
 .carousel
   position: absolute
