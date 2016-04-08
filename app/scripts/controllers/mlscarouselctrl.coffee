@@ -1,4 +1,4 @@
-mlsCarouselController = ()->
+app.controller 'mlsCarouselController',  ->
   @images = [
     {url:"res/slider1.png"},
     {url:"res/Placeholder2.jpeg"},
@@ -47,9 +47,3 @@ mlsCarouselController = ()->
     return undefined
 
   return this
-
-app.component 'mlsCarousel',
-    templateUrl: 'views/directives/carousel.html'
-    controller: mlsCarouselController
-
-
