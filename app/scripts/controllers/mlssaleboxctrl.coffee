@@ -7,10 +7,10 @@ app.controller 'mlsSaleBoxCtrl', (MlsSaleBoxFactory, $attrs, $element) ->
   @mlssalebox = MlsSaleBoxFactory.getNewMlsSaleBox(ctrl.id, ctrl.tag)
 
   listenerleft = ->
-     console.log("left event")
+     console.log({"left event":$element})
 
   listenerright = ->
-    console.log("rigth event")
+    console.log({"rigth event":$element})
 
   @mlssalebox.addListener('leftone', listenerleft)
   @mlssalebox.addListener('rightone', listenerright)
