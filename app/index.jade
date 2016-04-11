@@ -34,6 +34,7 @@ html(ng-app="shopLook")
 
     // build:js scripts/main.js
     // bower:js
+    script(src='/bower_components/eventEmitter/EventEmitter.js')
     script(src='/bower_components/angular/angular.js')
     script(src='/bower_components/angular-resource/angular-resource.js')
     script(src='/bower_components/angular-cookies/angular-cookies.js')
@@ -50,13 +51,15 @@ html(ng-app="shopLook")
     script(src='/scripts/configs/run.js')
 
     script(src='/scripts/factories/page.js')
-    script(src='/scripts/services/mlssaleboxsvc.js')
+    script(src='/scripts/factories/mlssaleboxfk.js')
 
     script(src='/scripts/controllers/global.js')
     script(src='/scripts/controllers/home.js')
     script(src='/scripts/controllers/mlscarouselctrl.js')
+    script(src='/scripts/controllers/mlssaleboxnavctrl.js')
     script(src='/scripts/controllers/mlssaleboxctrl.js')
 
     script(src='/scripts/components/mlscarousel.js')
+    script(src='/scripts/components/mlssaleboxnav.js')
     script(src='/scripts/components/mlssalebox.js')
     // endbuild

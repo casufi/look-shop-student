@@ -68,32 +68,17 @@ div.promo-boxes
 
 div.hot-sales
   div.hot-menu
-    div.local-wrapper.full-flex-container
-      menu.hot-buttons
-        a.active(ng-class="{open: opened2}")
-          span what`s hot
-          i.icon.mdi.mdi-menu(ng-click="opened2=!opened2")
-          //have to place .icon.mdi.mdi-menu on the active tab
-        a(ng-href="2" ng-class="{open: opened2}")
-          span designers
-        a(ng-href="3" ng-class="{open: opened2}")
-          span featured
-        a(ng-href="4" ng-class="{open: opened2}")
-          span latest
-      nav.hot-leftrigth
-        a.hot-left.active
-          i.icon.mdi.mdi-chevron-left
-        a.hot-rigth
-          i.icon.mdi.mdi-chevron-right
+    mls-sale-box-nav.local-wrapper.full-flex-container(boxid="hotbox")
+
   div.hot-positions
-    mls-sale-box(category="hot")
+    mls-sale-box(boxid="hotbox", boxtag="hot")
 
 div.discounts
   div.discounts-top
     div.discounts-border
     img(ng-src="images/Clearance.png")
   div.discounts-positions
-    mls-sale-box(category="discount")
+    mls-sale-box(id="discountbox", tag="discount")
 
 section.fav-brands-box
   div.local-wrapper

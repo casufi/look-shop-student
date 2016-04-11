@@ -2,6 +2,7 @@
   "name": "shopLook",
   "version": "0.0.2",
   "dependencies": {
+    "eventEmitter": "~4.3.0",
     "angular": "^1.5.0",
     "angular-resource": "^1.5.0",
     "angular-cookies": "^1.5.0",
@@ -9,7 +10,7 @@
     "angular-animate": "^1.5.0",
     "angular-touch": "^1.5.0",
     "normalize.css": "^3.0.2",
-    "mdi":""
+    "mdi": "^1.5.54"
   },
   "resolutions": {
     "angular": ">=1.5.0"

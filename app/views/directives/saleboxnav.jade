@@ -1,0 +1,9 @@
+menu.hot-buttons
+  a(ng-repeat="cat in $ctrl.categories" ng-class="[{active:$index===0},{open: $ctrl.opened2}]")
+    span {{cat.name}}
+    i.icon.mdi.mdi-menu(ng-if="$index===0" ng-click="$ctrl.opened2=!$ctrl.opened2")
+nav.hot-leftrigth
+  a.hot-left.active(ng-click="$ctrl.leftByOne()")
+    i.icon.mdi.mdi-chevron-left
+  a.hot-rigth(ng-click="$ctrl.rightByOne()")
+    i.icon.mdi.mdi-chevron-right

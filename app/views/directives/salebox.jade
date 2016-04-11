@@ -1,6 +1,6 @@
-div.positions
-  div.position(ng-repeat="a in [{},{sale:true},{sale:true},{},{},{},{},{}]")
-    img.position-picture(ng-src="res/Dress.png")
+div.positions(id="{{$ctrl.mlssalebox.id}}")
+  div.position(ng-repeat="a in $ctrl.mlssalebox.items")
+    img.position-picture(ng-src="{{a.url}}")
     div.position-sale-corner(ng-if="a.sale") sale
     div.position-label
       div.position-name hot short
