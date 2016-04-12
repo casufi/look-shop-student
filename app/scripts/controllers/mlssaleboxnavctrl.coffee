@@ -11,10 +11,10 @@ app.controller 'mlsSaleBoxNavCtrl', (MlsSaleBoxFactory, $attrs) ->
 
   @rightByOne = ->
     if ctrl.mlssalebox
-      ctrl.mlssalebox.emitEvent('rightone');
+      ctrl.mlssalebox.emitEvent('rightone')
 
   @leftByOne = ->
     if ctrl.mlssalebox
-      ctrl.mlssalebox.emitEvent('leftone');
+      ctrl.mlssalebox.emitEvent('leftone')
 
   return ctrl

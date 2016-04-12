@@ -1,4 +1,4 @@
-div.positions(id="{{$ctrl.mlssalebox.id}}")
+div.positions(id="{{$ctrl.mlssalebox.id}}" ng-swipe-left="$ctrl.moveLeftByOne()" ng-swipe-right="$ctrl.moveRigthByOne()" ng-swipe-disable-mouse)
   div.position(ng-repeat="a in $ctrl.mlssalebox.items")
     img.position-picture(ng-src="{{a.url}}")
     div.position-sale-corner(ng-if="a.sale") sale

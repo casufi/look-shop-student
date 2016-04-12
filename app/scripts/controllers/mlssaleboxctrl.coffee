@@ -34,5 +34,10 @@ app.controller 'mlsSaleBoxCtrl', (MlsSaleBoxFactory, $attrs, $element) ->
   @mlssalebox.on('leftone', listenerleft)
   @mlssalebox.on('rightone', listenerright)
 
+  @moveLeftByOne = ->
+    @mlssalebox.emitEvent('leftone')
+
+  @moveRigthByOne = ->
+    @mlssalebox.emitEvent('rightone')
 
   return ctrl
