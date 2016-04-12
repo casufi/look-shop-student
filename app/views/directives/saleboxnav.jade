@@ -3,7 +3,7 @@ menu.hot-buttons
     span {{cat.name}}
     i.icon.mdi.mdi-menu(ng-if="$index===0" ng-click="$ctrl.opened2=!$ctrl.opened2")
 nav.hot-leftrigth
-  a.hot-left.active(ng-click="$ctrl.leftByOne()")
+  a.hot-left.active(ng-click="$ctrl.rightByOne()")
     i.icon.mdi.mdi-chevron-left
-  a.hot-rigth(ng-click="$ctrl.rightByOne()")
+  a.hot-rigth(ng-click="$ctrl.leftByOne()")
     i.icon.mdi.mdi-chevron-right
