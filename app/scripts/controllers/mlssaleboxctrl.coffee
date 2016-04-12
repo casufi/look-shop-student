@@ -24,10 +24,11 @@ app.controller 'mlsSaleBoxCtrl', (MlsSaleBoxFactory, $attrs, $element) ->
 
   listenerright = ->
     elem = $element[0].querySelector('.positions')
-    elem.classList.add('animate')
-    currentposition = currentposition + 270
+    elementwidth = $element[0].querySelectorAll('.position')[0].getBoundingClientRect().width
+    currentposition = currentposition + elementwidth + 2*15
     if currentposition > 0
       currentposition = 0
+    elem.classList.add('animate')
     elem.style.transform = 'translateX('+currentposition+'px)'
 
   @mlssalebox.on('leftone', listenerleft)
