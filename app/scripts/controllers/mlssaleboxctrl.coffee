@@ -10,22 +10,22 @@ app.controller 'mlsSaleBoxCtrl', (MlsSaleBoxFactory, $attrs, $element) ->
 
   listenerleft = ->
     totallwidth = $element[0].getBoundingClientRect().width
-    elementwidth = $element[0].querySelectorAll('.position')[0].getBoundingClientRect().width
+    elementwidth = $element[0].querySelectorAll('.position')[0].getBoundingClientRect().width + 2*15
     #Set margin to 15 because don`t know how to get it from DOM (not CSS)
-    elementswidth = (15*2 + elementwidth) * ctrl.mlssalebox.items.length
+    elementswidth = elementwidth * ctrl.mlssalebox.items.length
     minoffset = totallwidth - elementswidth
 
     elem = $element[0].querySelector('.positions')
     elem.classList.add('animate')
-    currentposition = currentposition - 270
+    currentposition = currentposition - elementwidth
     if currentposition  < minoffset
       currentposition = minoffset
     elem.style.transform = 'translateX('+currentposition+'px)'
 
   listenerright = ->
     elem = $element[0].querySelector('.positions')
-    elementwidth = $element[0].querySelectorAll('.position')[0].getBoundingClientRect().width
-    currentposition = currentposition + elementwidth + 2*15
+    elementwidth = $element[0].querySelectorAll('.position')[0].getBoundingClientRect().width + 2*15
+    currentposition = currentposition + elementwidth
     if currentposition > 0
       currentposition = 0
     elem.classList.add('animate')
