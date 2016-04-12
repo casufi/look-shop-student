@@ -3,8 +3,8 @@ div.positions(id="{{$ctrl.mlssalebox.id}}")
     img.position-picture(ng-src="{{a.url}}")
     div.position-sale-corner(ng-if="a.sale") sale
     div.position-label
-      div.position-name hot short
-      div.position-price 20$
+      div.position-name(ng-bind="a.title")
+      div.position-price(ng-bind="a.price|currency")
       div.position-button
         span add to cart
         i.icon.mdi.mdi-plus

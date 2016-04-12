@@ -6,19 +6,32 @@ app.controller 'mlsSaleBoxCtrl', (MlsSaleBoxFactory, $attrs, $element) ->
 
   @mlssalebox = MlsSaleBoxFactory.getNewMlsSaleBox(ctrl.id, ctrl.tag)
 
+  currentposition = 0;
+
   listenerleft = ->
-     console.log({"left event":$element})
+    totallwidth = $element[0].getBoundingClientRect().width
+    elementwidth = $element[0].querySelectorAll('.position')[0].getBoundingClientRect().width
+    #Set margin to 15 because don`t know how to get it from DOM (not CSS)
+    elementswidth = (15*2 + elementwidth) * ctrl.mlssalebox.items.length
+    minoffset = totallwidth - elementswidth
+
+    elem = $element[0].querySelector('.positions')
+    elem.classList.add('animate')
+    currentposition = currentposition - 270
+    if currentposition  < minoffset
+      currentposition = minoffset
+    elem.style.transform = 'translateX('+currentposition+'px)'
 
   listenerright = ->
-    console.log({"rigth event":$element})
+    elem = $element[0].querySelector('.positions')
+    elem.classList.add('animate')
+    currentposition = currentposition + 270
+    if currentposition > 0
+      currentposition = 0
+    elem.style.transform = 'translateX('+currentposition+'px)'
 
-  @mlssalebox.addListener('leftone', listenerleft)
-  @mlssalebox.addListener('rightone', listenerright)
+  @mlssalebox.on('leftone', listenerleft)
+  @mlssalebox.on('rightone', listenerright)
 
-  @itemsScrollLeftByOne = ->
-    return undefined
-
-  @itemsScrollRightByOne = ->
-    return undefined
 
   return ctrl

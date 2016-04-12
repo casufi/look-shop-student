@@ -2,7 +2,7 @@ div.carousel-promo
   div.nodisplay
     img(ng-repeat="image in $ctrl.images" ng-src="{{image.url}}")
   div.carousel-image(ng-if="$ctrl.images.length" ng-class="$ctrl.direct")
-    div.local-wrapper(ng-swipe-left="$ctrl.setActiveNext()" ng-swipe-right="$ctrl.setActivePrevious()")
+    div.local-wrapper(ng-swipe-left="$ctrl.setActiveNext()" ng-swipe-right="$ctrl.setActivePrevious()" ng-swipe-disable-mouse)
       img(ng-repeat="image in $ctrl.images" ng-src="{{image.url}}" ng-if="$ctrl.isActiveImg($index)")
       div.carousel.left(ng-click="$ctrl.setActivePrevious()")
         img(ng-src="images/ArrowLeft.png")

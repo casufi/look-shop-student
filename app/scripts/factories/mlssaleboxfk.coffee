@@ -4,13 +4,26 @@ app.factory 'MlsSaleBoxFactory', ($q) ->
   fk.saleboxes = []
 
   class SaleItem
-    constructor: (id)->
+    constructor: (id, title, price)->
       @id = id
+      @title = title
+      @price = price
       @url = "/res/Dress.png"
       @sale = true
 
 
-  items = [new SaleItem(1), new SaleItem(2), new SaleItem(3), new SaleItem(4), new SaleItem(5), new SaleItem(6), new SaleItem(7), new SaleItem(8), new SaleItem(9), new SaleItem(10), new SaleItem(11)]
+  items = [
+    new SaleItem(1, 'hot short', 11),
+    new SaleItem(2, 'hot short', 12),
+    new SaleItem(3, 'hot top', 13),
+    new SaleItem(4, 'hot short', 14),
+    new SaleItem(5, 'hot short', 15),
+    new SaleItem(6, 'hot short', 16),
+    new SaleItem(7, 'hot short', 17),
+    new SaleItem(8, 'hot short', 18),
+    new SaleItem(9, 'hot short', 19),
+    new SaleItem(10, 'hot short', 20),
+    new SaleItem(11, 'hot short', 21)]
 
   getCategories = ->
     return [
