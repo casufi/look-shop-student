@@ -1,5 +1,8 @@
 app.controller 'mlsSaleBoxCtrl', (MlsSaleBoxFactory, $attrs, $element) ->
 
+  totallwidth = $element[0].getBoundingClientRect().width
+  console.log("run controller")
+
   ctrl = this
   ctrl.id = $attrs.boxid
   ctrl.tag = $attrs.boxtag
@@ -9,7 +12,6 @@ app.controller 'mlsSaleBoxCtrl', (MlsSaleBoxFactory, $attrs, $element) ->
   currentposition = 0;
 
   listenerleft = ->
-    totallwidth = $element[0].getBoundingClientRect().width
     elementwidth = $element[0].querySelectorAll('.position')[0].getBoundingClientRect().width + 2*15
     #Set margin to 15 because don`t know how to get it from DOM (not CSS)
     elementswidth = elementwidth * ctrl.mlssalebox.items.length
