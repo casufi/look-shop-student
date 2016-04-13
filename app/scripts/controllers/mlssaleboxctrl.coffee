@@ -13,9 +13,13 @@ app.controller 'mlsSaleBoxCtrl', (MlsSaleBoxFactory, $attrs, $element) ->
 
   if ctrl.navigation
     moveSlider = (direction) ->
-      elem = $element[0].querySelector('.positions')
-      elementWidth = $element[0].querySelectorAll('.position')[0].getBoundingClientRect().width + 2*15
-      #Set margin to 15 because don`t know how to get it from DOM (not CSS)
+      elements = $element[0].querySelector('.positions')
+      elements.classList.remove('animate')
+
+      elem = $element[0].querySelectorAll('.position')[0]
+      elemCss = window.getComputedStyle(elem)
+      elementWidth = elem.getBoundingClientRect().width + parseInt(elemCss.marginLeft) + parseInt(elemCss.marginRight)
+
       if direction == 'left'
         elementsWidth = elementWidth * ctrl.mlssalebox.items.length
         minOffset = totallWidth - elementsWidth
@@ -26,8 +30,8 @@ app.controller 'mlsSaleBoxCtrl', (MlsSaleBoxFactory, $attrs, $element) ->
         currentPosition = currentPosition + elementWidth
         if currentPosition > 0
           currentPosition = 0
-      elem.classList.add('animate')
-      elem.style.transform = 'translateX('+currentPosition+'px)'
+      elements.classList.add('animate')
+      elements.style.transform = 'translateX('+currentPosition+'px)'
 
     listenerLeft = ->
       moveSlider('left')
