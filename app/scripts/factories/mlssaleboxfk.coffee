@@ -26,12 +26,13 @@ app.factory 'MlsSaleBoxFactory', ($q) ->
     new SaleItem(11, 'hot short', 21)]
 
   getCategories = ->
-    return [
-      {name:"what`s hot"},
+    @.categories = [
+      {name:"what`s hot", active: true},
       {name:"designers"},
       {name:"featured"},
       {name:"latest"}
     ]
+    return true
 
   class MlsSaleBox extends EventEmitter
     constructor: (id, tag)->

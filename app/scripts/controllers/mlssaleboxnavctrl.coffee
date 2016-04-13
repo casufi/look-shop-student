@@ -7,7 +7,8 @@ app.controller 'mlsSaleBoxNavCtrl', (MlsSaleBoxFactory, $attrs) ->
   mlssalebox_
     .then (response) ->
       ctrl.mlssalebox = response
-      ctrl.categories = ctrl.mlssalebox.getCategories()
+      if ctrl.mlssalebox.getCategories()
+        ctrl.categories = ctrl.mlssalebox.categories
 
   @rightByOne = ->
     if ctrl.mlssalebox
@@ -16,5 +17,16 @@ app.controller 'mlsSaleBoxNavCtrl', (MlsSaleBoxFactory, $attrs) ->
   @leftByOne = ->
     if ctrl.mlssalebox
       ctrl.mlssalebox.emitEvent('leftone')
+
+  @changeActiveCategory = (category) ->
+    if not category.active
+      for category_ in ctrl.categories
+        if category_ == category
+          category_.active = true
+        else
+          category_.active = false
+      if ctrl.mlssalebox
+        ctrl.mlssalebox.emitEvent('categorychange')
+    return undefined
 
   return ctrl

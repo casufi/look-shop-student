@@ -35,10 +35,13 @@ hot-menu-height = 45px
 
         &:hover
           text-decoration: underline
+          cursor: pointer
 
         &.active
           background-color: color-back-activ
           color: #fff
+          text-decoration: none
+          cursor: inherit
 
     .hot-leftrigth
       margin-left: auto
@@ -56,6 +59,9 @@ hot-menu-height = 45px
         margin: 0px
         padding: 0px
         border-width: 0px
+
+        &:hover
+          transform: scale(1.05, 1.05);
 
         &.active
           background-color: #fd926d
@@ -89,12 +95,14 @@ full-size-menu-height = 56px
           align-items: center
           justify-content: space-between
           overflow: hidden
+          order: 2
 
           &.active
             background-color: #f4845d
             color: #fff
             width: 100%
             display: flex
+            order: 1
 
             &.open
               border-bottom: 1px solid #fff

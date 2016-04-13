@@ -33,8 +33,14 @@ app.controller 'mlsSaleBoxCtrl', (MlsSaleBoxFactory, $attrs, $element) ->
     elem.classList.add('animate')
     elem.style.transform = 'translateX('+currentposition+'px)'
 
+  categoryChanged = ->
+    for cat in ctrl.mlssalebox.categories
+      if cat.active
+        console.log(cat.name)
+
   @mlssalebox.on('leftone', listenerleft)
   @mlssalebox.on('rightone', listenerright)
+  @mlssalebox.on('categorychange', categoryChanged)
 
   @moveLeftByOne = ->
     @mlssalebox.emitEvent('leftone')
