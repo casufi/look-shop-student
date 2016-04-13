@@ -25,6 +25,7 @@ app.controller 'mlsSaleBoxNavCtrl', (MlsSaleBoxFactory, $attrs) ->
           category_.active = true
         else
           category_.active = false
+      ctrl.opened = false
       if ctrl.mlssalebox
         ctrl.mlssalebox.emitEvent('categorychange')
     return undefined
