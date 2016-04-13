@@ -9,7 +9,7 @@ app.factory 'MlsSaleBoxFactory', ($q) ->
       @title = title
       @price = price
       @url = "/res/Dress.png"
-      @sale = true
+      @sale = Math.floor(Math.random() * 9) % 2
 
 
   items = [
@@ -35,10 +35,13 @@ app.factory 'MlsSaleBoxFactory', ($q) ->
     return true
 
   class MlsSaleBox extends EventEmitter
-    constructor: (id, tag)->
+    constructor: (id, tag, empty) ->
       @id = id
       @tag = tag
-      @items = items
+      if empty
+        @items = [new SaleItem(1, 'hot short', 110)]
+      else
+        @items = items
 
       @getnextItems = ->
         newItems = []
@@ -49,6 +52,13 @@ app.factory 'MlsSaleBoxFactory', ($q) ->
       return undefined
 
   MlsSaleBox.prototype.getCategories = getCategories
+
+  @getNewEmptyMlsSaleBox = (id, tag)->
+    if fk.saleboxes[id]
+      #Change tag
+      return fk.saleboxes[id]
+    return new MlsSaleBox(id, tag, 1)
+
 
   @getNewMlsSaleBox = (id, tag)->
     if fk.saleboxes[id]
@@ -63,5 +73,15 @@ app.factory 'MlsSaleBoxFactory', ($q) ->
       resolve(fk.saleboxes[id])
 
     return result
+
+  @fillMlsSaleBoxById = (id, tag, category, count) ->
+    if !fk.saleboxes[id]
+      fk.saleboxes[id] = fk.getNewMlsSaleBox(id)
+    if items.length > count
+      fk.saleboxes[id].items = items.slice(0, count)
+      return undefined
+    fk.saleboxes[id].items = items
+    return undefined
+
 
   return this

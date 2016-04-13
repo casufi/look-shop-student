@@ -4,3 +4,4 @@ app.component 'mlsSaleBox',
   bindings:
     boxid: '<'
     boxtag: '<'
+    navigation: '<'

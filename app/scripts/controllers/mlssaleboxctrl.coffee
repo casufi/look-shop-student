@@ -1,51 +1,53 @@
 app.controller 'mlsSaleBoxCtrl', (MlsSaleBoxFactory, $attrs, $element) ->
 
-  totallwidth = $element[0].getBoundingClientRect().width
-  console.log("run controller")
+  totallWidth = $element[0].getBoundingClientRect().width
 
   ctrl = this
   ctrl.id = $attrs.boxid
   ctrl.tag = $attrs.boxtag
+  ctrl.navigation = $attrs.navigation*1
+
+  currentPosition = 0
 
   @mlssalebox = MlsSaleBoxFactory.getNewMlsSaleBox(ctrl.id, ctrl.tag)
 
-  currentposition = 0;
+  if ctrl.navigation
+    moveSlider = (direction) ->
+      elem = $element[0].querySelector('.positions')
+      elementWidth = $element[0].querySelectorAll('.position')[0].getBoundingClientRect().width + 2*15
+      #Set margin to 15 because don`t know how to get it from DOM (not CSS)
+      if direction == 'left'
+        elementsWidth = elementWidth * ctrl.mlssalebox.items.length
+        minOffset = totallWidth - elementsWidth
+        currentPosition = currentPosition - elementWidth
+        if currentPosition  < minOffset
+          currentPosition = minOffset
+      if direction == 'right'
+        currentPosition = currentPosition + elementWidth
+        if currentPosition > 0
+          currentPosition = 0
+      elem.classList.add('animate')
+      elem.style.transform = 'translateX('+currentPosition+'px)'
 
-  listenerleft = ->
-    elementwidth = $element[0].querySelectorAll('.position')[0].getBoundingClientRect().width + 2*15
-    #Set margin to 15 because don`t know how to get it from DOM (not CSS)
-    elementswidth = elementwidth * ctrl.mlssalebox.items.length
-    minoffset = totallwidth - elementswidth
+    listenerLeft = ->
+      moveSlider('left')
 
-    elem = $element[0].querySelector('.positions')
-    elem.classList.add('animate')
-    currentposition = currentposition - elementwidth
-    if currentposition  < minoffset
-      currentposition = minoffset
-    elem.style.transform = 'translateX('+currentposition+'px)'
+    listenerRight = ->
+      moveSlider('right')
 
-  listenerright = ->
-    elem = $element[0].querySelector('.positions')
-    elementwidth = $element[0].querySelectorAll('.position')[0].getBoundingClientRect().width + 2*15
-    currentposition = currentposition + elementwidth
-    if currentposition > 0
-      currentposition = 0
-    elem.classList.add('animate')
-    elem.style.transform = 'translateX('+currentposition+'px)'
+    categoryChanged = ->
+      for cat in ctrl.mlssalebox.categories
+        if cat.active
+          console.log(cat.name)
 
-  categoryChanged = ->
-    for cat in ctrl.mlssalebox.categories
-      if cat.active
-        console.log(cat.name)
+    @mlssalebox.on('leftone', listenerLeft)
+    @mlssalebox.on('rightone', listenerRight)
+    @mlssalebox.on('categorychange', categoryChanged)
 
-  @mlssalebox.on('leftone', listenerleft)
-  @mlssalebox.on('rightone', listenerright)
-  @mlssalebox.on('categorychange', categoryChanged)
+    @moveLeftByOne = ->
+      @mlssalebox.emitEvent('leftone')
 
-  @moveLeftByOne = ->
-    @mlssalebox.emitEvent('leftone')
-
-  @moveRigthByOne = ->
-    @mlssalebox.emitEvent('rightone')
+    @moveRigthByOne = ->
+      @mlssalebox.emitEvent('rightone')
 
   return ctrl
