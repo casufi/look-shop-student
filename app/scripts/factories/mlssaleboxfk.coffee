@@ -42,7 +42,7 @@ app.factory 'MlsSaleBoxFactory', ($q) ->
       @items = []
 
       @loadItems = ->
-        Array::push.apply @items, fk.items
+        @items.push fk.items... 
         return undefined
 
       fk.saleboxes[id] = @
