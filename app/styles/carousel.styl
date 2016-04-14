@@ -11,15 +11,15 @@
 .carousel-image
   .local-wrapper
     overflow: hidden
+    &>a
+      &>img
+        width: 100%
+        height: auto
+        margin: 0px
+        display block
+        position relative
 
-    &>img
-      width: 100%
-      height: auto
-      margin: 0px
-      display block
-      position relative
-
-  &.left .local-wrapper
+  &.left .local-wrapper>a
 
     &>img.ng-enter
       position relative
@@ -47,7 +47,7 @@
       left: 0
       transform: translateX(100%)
 
-  &.right .local-wrapper
+  &.right .local-wrapper>a
 
     &>img.ng-enter
       position relative

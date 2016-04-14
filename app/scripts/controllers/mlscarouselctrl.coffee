@@ -1,9 +1,12 @@
 app.controller 'mlsCarouselController',  ->
   @images = [
-    {url:"res/slider1.png"},
-    {url:"res/Placeholder2.jpeg"},
-    {url:"http://placekitten.com/1200/440"},
-    {url:"https://unsplash.it/1200/440/?random"}
+    {src:"res/slider1.png", url:"/"},
+    {src:"res/Placeholder2.jpeg", url:"/"},
+    {src:"https://unsplash.it/1200/440/?random=1", url:"/"},
+    {src:"https://unsplash.it/1200/440/?random=2", url:"/"},
+    {src:"https://unsplash.it/1200/440/?random=3", url:"/"},
+    {src:"https://unsplash.it/1200/440/?random=4"},
+    {src:"https://unsplash.it/1200/440/?random=5"},
   ]
   @activeimage = 0
   @direct = 'left'
@@ -18,6 +21,7 @@ app.controller 'mlsCarouselController',  ->
   # Now preload all images
   @isCacheImg = (index) ->
     return true
+    # Planned to cache only 3 closes images
     ###
     if ctrl.activeimage == index || ctrl.activeimage+1 == index||ctrl.activeimage-1 == index||(ctrl.activeimage == 0 && index == ctrl.images.length-1)||(ctrl.activeimage == ctrl.images.length-1 && index == 0)
       return true
