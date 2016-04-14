@@ -31,7 +31,7 @@ html(ng-app="shopLook")
 
   body(ng-controller="GlobalCtrl")
     div#wrapper(ng-view)
-
+    div.splash
     // build:js scripts/main.js
     // bower:js
     script(src='/bower_components/eventEmitter/EventEmitter.js')
@@ -62,4 +62,6 @@ html(ng-app="shopLook")
     script(src='/scripts/components/mlscarousel.js')
     script(src='/scripts/components/mlssaleboxnav.js')
     script(src='/scripts/components/mlssalebox.js')
+
+    script(src='/scripts/splash.js')
     // endbuild

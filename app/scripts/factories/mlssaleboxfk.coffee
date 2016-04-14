@@ -12,7 +12,7 @@ app.factory 'MlsSaleBoxFactory', ($q) ->
       @sale = Math.floor(Math.random() * 9) % 2
 
 
-  items = [
+  @items = [
     new SaleItem(1, 'hot short', 11),
     new SaleItem(2, 'hot short', 12),
     new SaleItem(3, 'hot top', 13),
@@ -36,29 +36,19 @@ app.factory 'MlsSaleBoxFactory', ($q) ->
 
   class MlsSaleBox extends EventEmitter
     constructor: (id, tag, empty) ->
+      self = this
       @id = id
       @tag = tag
-      if empty
-        @items = [new SaleItem(1, 'hot short', 110)]
-      else
-        @items = items
+      @items = []
 
-      @getnextItems = ->
-        newItems = []
-        @items.push newItems
+      @loadItems = ->
+        Array::push.apply @items, fk.items
         return undefined
 
       fk.saleboxes[id] = @
       return undefined
 
   MlsSaleBox.prototype.getCategories = getCategories
-
-  @getNewEmptyMlsSaleBox = (id, tag)->
-    if fk.saleboxes[id]
-      #Change tag
-      return fk.saleboxes[id]
-    return new MlsSaleBox(id, tag, 1)
-
 
   @getNewMlsSaleBox = (id, tag)->
     if fk.saleboxes[id]
@@ -75,7 +65,7 @@ app.factory 'MlsSaleBoxFactory', ($q) ->
     return result
 
   @fillMlsSaleBoxById = (id, tag, category, count) ->
-    if !fk.saleboxes[id]
+    if not fk.saleboxes[id]?
       fk.saleboxes[id] = fk.getNewMlsSaleBox(id)
     if items.length > count
       fk.saleboxes[id].items = items.slice(0, count)

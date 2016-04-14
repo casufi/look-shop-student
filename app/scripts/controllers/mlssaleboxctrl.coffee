@@ -10,6 +10,7 @@ app.controller 'mlsSaleBoxCtrl', (MlsSaleBoxFactory, $attrs, $element) ->
   currentPosition = 0
 
   @mlssalebox = MlsSaleBoxFactory.getNewMlsSaleBox(ctrl.id, ctrl.tag)
+  @mlssalebox.loadItems()
 
   if ctrl.navigation
     moveSlider = (direction) ->
