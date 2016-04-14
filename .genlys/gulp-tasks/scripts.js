@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var watch = require('gulp-watch');
+var sourcemaps = require('gulp-sourcemaps');
 var coffee = require('gulp-coffee');
 var filter = require('gulp-filter');
 var rename = require('gulp-rename');
@@ -97,7 +98,9 @@ gulp.task('scripts:watch', function () {
     .pipe(watch(src, watchOptions))
 
     .pipe(coffeeFilter)
+    .pipe(sourcemaps.init())
     .pipe(coffee(coffeeOptions))
+    .pipe(sourcemaps.write())
     .pipe(coffeeFilter.restore)
 
     .pipe(jsFilter)
