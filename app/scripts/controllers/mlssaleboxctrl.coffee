@@ -1,13 +1,15 @@
 app.controller 'mlsSaleBoxCtrl', (MlsSaleBoxFactory, $attrs, $element) ->
+  currentPosition = 0
 
   totallWidth = $element[0].getBoundingClientRect().width
+  window.addEventListener "resize", ->
+    totallWidth = $element[0].getBoundingClientRect().width
 
-  ctrl = this
-  ctrl.id = $attrs.boxid
-  ctrl.tag = $attrs.boxtag
-  ctrl.navigation = $attrs.navigation*1
 
-  currentPosition = 0
+  @id = $attrs.boxid
+  @tag = $attrs.boxtag
+  @navigation = $attrs.navigation*1
+  ctrl = @
 
   @mlssalebox = MlsSaleBoxFactory.getNewMlsSaleBox(ctrl.id, ctrl.tag)
   @mlssalebox.loadItems()
