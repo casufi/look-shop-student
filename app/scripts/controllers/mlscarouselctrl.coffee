@@ -2,10 +2,10 @@ app.controller 'mlsCarouselController',  ->
   @images = [
     {src:"res/slider1.png", url:"/"},
     {src:"res/Placeholder2.jpeg", url:"/"},
-    {src:"https://unsplash.it/1200/440/?random=1", url:"/"},
+    {src:"https://unsplash.it/1200/440/?random=1" },
     {src:"https://unsplash.it/1200/440/?random=2", url:"/"},
-    {src:"https://unsplash.it/1200/440/?random=3", url:"/"},
-    {src:"https://unsplash.it/1200/440/?random=4"},
+    {src:"https://unsplash.it/1200/440/?random=3"},
+    {src:"https://unsplash.it/1200/440/?random=4", url:"/"},
     {src:"https://unsplash.it/1200/440/?random=5"},
   ]
   @activeimage = 0

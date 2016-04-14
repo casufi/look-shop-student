@@ -12,26 +12,25 @@
   .local-wrapper
     overflow: hidden
     &>a
+      display block
+      position relative
       &>img
         width: 100%
         height: auto
-        margin: 0px
-        display block
-        position relative
 
-  &.left .local-wrapper>a
+  &.left .local-wrapper
 
-    &>img.ng-enter
+    &>a.ng-enter
       position relative
       transform: translateX(-100%)
       transition-property: transform
       transition-duration: 500ms
 
-    &>img.ng-enter.ng-enter-active
+    &>a.ng-enter.ng-enter-active
       position relative
       transform: translateX(0px)
 
-    &>img.ng-leave
+    &>a.ng-leave
       display block
       position absolute
       top: 0
@@ -40,26 +39,26 @@
       transition-property: transform
       transition-duration: 500ms
 
-    &>img.ng-leave.ng-leave-active
+    &>a.ng-leave.ng-leave-active
       display block
       position absolute
       top: 0
       left: 0
       transform: translateX(100%)
 
-  &.right .local-wrapper>a
+  &.right .local-wrapper
 
-    &>img.ng-enter
+    &>a.ng-enter
       position relative
       transform: translateX(100%)
       transition-property: transform
       transition-duration: 500ms
 
-    &>img.ng-enter.ng-enter-active
+    &>a.ng-enter.ng-enter-active
       position relative
       transform: translateX(0px)
 
-    &>img.ng-leave
+    &>a.ng-leave
       display block
       position absolute
       top: 0
@@ -68,7 +67,7 @@
       transition-property: transform
       transition-duration: 500ms
 
-    &>img.ng-leave.ng-leave-active
+    &>a.ng-leave.ng-leave-active
       display block
       position absolute
       top: 0
@@ -77,21 +76,27 @@
 
 .carousel
   position: absolute
-  display: table-cell
   width: 30px
   height: 118px
   top: 50%
   transform: translateY(-59px)
-  background-color: rgba(255, 255, 255, 0.9);
-  padding-top: 50px
+  background-color: rgba(255, 255, 255, 0.7);
   text-align: center
   cursor: pointer
+  display: flex
+  justify-content: center
+  align-items: center
 
   &.left
     left: 0px
 
   &.right
     right: 0px
+
+  .icon
+    color: rgba(0, 0, 0, 0.3)
+    display: block
+    font-size: 3.6em
 
 carousel-track-height = 75px
 .carousel-track

@@ -3,12 +3,12 @@ div.carousel-promo
     img(ng-repeat="image in $ctrl.images" ng-src="{{image.src}}")
   div.carousel-image(ng-if="$ctrl.images.length" ng-class="$ctrl.direct")
     div.local-wrapper(ng-swipe-left="$ctrl.setActiveNext()" ng-swipe-right="$ctrl.setActivePrevious()" ng-swipe-disable-mouse)
-      a(ng-repeat="image in $ctrl.images" ng-href="{{image.url}}")
-        img(ng-src="{{image.src}}" ng-if="$ctrl.isActiveImg($index)")
+      a(ng-repeat="image in $ctrl.images" ng-href="{{image.url}}" ng-if="$ctrl.isActiveImg($index)")
+        img(ng-src="{{image.src}}")
       div.carousel.left(ng-click="$ctrl.setActivePrevious()")
-        img(ng-src="images/ArrowLeft.png")
+        i.icon.mdi.mdi-chevron-left
       div.carousel.right(ng-click="$ctrl.setActiveNext()")
-        img(ng-src="images/ArrowRight.png")
+        i.icon.mdi.mdi-chevron-right
       div.carousel-action
   div.local-wrapper
     nav.carousel-track
