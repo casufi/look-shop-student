@@ -4,6 +4,7 @@ var filter = require('gulp-filter');
 var stylus = require('gulp-stylus');
 var autoprefixer = require('gulp-autoprefixer');
 var lazypipe = require('lazypipe');
+var sourcemaps = require('gulp-sourcemaps');
 
 var config = require('../config');
 var reload = require('../browser-sync').reload;
@@ -41,13 +42,14 @@ gulp.task('styles:watch', function () {
     .pipe(watch(src, {verbose: true}))
 
     .pipe(stylusFilter)
+    .pipe(sourcemaps.init())
     .pipe(stylus())
+    .pipe(sourcemaps.write())
     .pipe(stylusFilter.restore)
 
     .pipe(cssFilter)
     .pipe(autoprefixer(config.autoprefixer))
     .pipe(cssFilter.restore)
-
     .pipe(gulp.dest(config.destDir))
     .pipe(reload({stream: true}));
 });

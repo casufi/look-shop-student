@@ -1,12 +1,12 @@
 var gulp = require('gulp');
 var watch = require('gulp-watch');
-var sourcemaps = require('gulp-sourcemaps');
 var coffee = require('gulp-coffee');
 var filter = require('gulp-filter');
 var rename = require('gulp-rename');
 var ngConfig = require('gulp-ng-config');
 var ngAnnotate = require('gulp-ng-annotate');
 var lazypipe = require('lazypipe');
+var sourcemaps = require('gulp-sourcemaps');
 
 var config = require('../config');
 var reload = require('../browser-sync').reload;
@@ -106,7 +106,6 @@ gulp.task('scripts:watch', function () {
     .pipe(jsFilter)
     .pipe(ngAnnotate())
     .pipe(jsFilter.restore)
-
     .pipe(gulp.dest(config.destDir))
     .pipe(reload({stream: true}));
 });
