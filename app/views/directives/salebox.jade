@@ -1,10 +1,10 @@
-div.positions(id="{{$ctrl.mlssalebox.id}}" ng-swipe-left="$ctrl.moveLeftByOne()" ng-swipe-right="$ctrl.moveRigthByOne()" ng-swipe-disable-mouse)
-  div.position(ng-repeat="a in $ctrl.mlssalebox.items")
+.positions(id="$ctrl.mlssalebox.id" ng-swipe-left="$ctrl.moveLeftByOne()" ng-swipe-right="$ctrl.moveRigthByOne()" ng-swipe-disable-mouse)
+  .position(ng-repeat="a in $ctrl.mlssalebox.items")
     img.position-picture(ng-src="{{a.url}}")
-    div.position-sale-corner(ng-if="a.sale") sale
-    div.position-label
-      div.position-name(ng-bind="a.title")
-      div.position-price(ng-bind="a.price|currency")
-      div.position-button
+    .position-sale-corner(ng-if="a.sale") sale
+    .position-label
+      .position-name(ng-bind="a.title")
+      .position-price(ng-bind="a.price|currency")
+      .position-button
         span add to cart
         i.icon.mdi.mdi-plus

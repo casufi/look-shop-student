@@ -1,18 +1,19 @@
-div.user-toolbox.full-flex-container
-  div.local-wrapper.full-flex-container
-    div.care-info custom care: 888-23-4567{{care.phone}}
-    div.shop-settings
-      div.currency-select
+.user-toolbox.full-flex-container
+  .local-wrapper.full-flex-container
+    .care-info custom care: 888-23-4567
+      span(ng-bind="care.phone")
+    .shop-settings
+      .currency-select
         span $ &nbsp; US &nbsp;
         i.icon.mdi.mdi-menu-down
-      div.account-button
+      .account-button
         i.icon.mdi.mdi-account &nbsp;
         span my account
-      div.search-button
+      .search-button
         i.icon.mdi.mdi-magnify
 
 header.menu-box
-  div.local-wrapper.full-flex-container
+  .local-wrapper.full-flex-container
     img.shop-logo(ng-src="images/logo.png")
     nav.top-menu
       a.menu-item.menu-header(ng-class="{open: opened}") menu
@@ -28,18 +29,18 @@ header.menu-box
       a.menu-transition.menu-item(ng-class="{open: opened}") clearence
         i.icon.mdi.mdi-menu-down
 
-    div.cart-box
-      div.cart-button You cart
+    .cart-box
+      .cart-button You cart
         i.icon.mdi.mdi-menu-down
-      div.cart-menu(ng-show="0")
-        div.menu-item
-      div.cart-totall
+      .cart-menu(ng-show="0")
+        .menu-item
+      .cart-totall
         i.icon.mdi.mdi-shopping
         span.total 0 items|$0
 mls-carousel
 
-div.user-connections
-  div.local-wrapper.full-flex-container
+.user-connections
+  .local-wrapper.full-flex-container
     section.email-subscription
       h2 Stay updated
       input(type="text" placeholder="Your email address")
@@ -54,36 +55,36 @@ div.user-connections
       a(ng-href="http://pinterest.com/")
         i.icon.mdi.mdi-pinterest
 
-div.promo-boxes
-  div.promo-big
+.promo-boxes
+  .promo-big
     img(ng-src="res/PromoBoxBig.png")
-  div.promo-big
-    div.promo-long
+  .promo-big
+    .promo-long
       img(ng-src="res/PromoBoxLong.png")
-    div.promo-long
-      div.promo-small
+    .promo-long
+      .promo-small
         img(ng-src="res/PromoBoxSmall1.png")
-      div.promo-small
+      .promo-small
         img(ng-src="res/PromoBoxSmall2.png")
 
-div.hot-sales
-  div.hot-menu
+.hot-sales
+  .hot-menu
     mls-sale-box-nav.local-wrapper.full-flex-container(boxid="hotbox")
 
-  div.hot-positions
+  .hot-positions
     mls-sale-box(boxid="hotbox", boxtag="hot", navigation="1")
 
-div.discounts
-  div.discounts-top
-    div.discounts-border
+.discounts
+  .discounts-top
+    .discounts-border
     img(ng-src="images/Clearance.png")
-  div.discounts-positions
+  .discounts-positions
     mls-sale-box(boxid="discountbox", boxtag="discount", navigation=0)
 
 section.fav-brands-box
-  div.local-wrapper
+  .local-wrapper
     h2.fav-brand-header favourite brands
-    div.brand-logos
+    .brand-logos
         img(ng-src="res/brands/Addict.png" alt="Addict")
         img(ng-src="res/brands/AbandonShip.png" alt="Abandon Ship")
         img(ng-src="res/brands/Adidas.png" alt="Adidas")
@@ -94,50 +95,50 @@ section.fav-brands-box
         img(ng-src="res/brands/Greenson.png" alt="Greenson")
 
 section.about-box
-  div.local-wrapper
+  .local-wrapper
     h2 About LookShop
     p.
       This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeosu dapibus condimentum sit amet a augue. condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
 
 footer.footer-full
-  div.payments-box
-    div.local-wrapper
+  .payments-box
+    .local-wrapper
       span We accept
       img(ng-src="res/Payments.png")
-  div.footer-main
-    div.local-wrapper.full-flex-container
-      div.footer-links
-        div.footer-link
+  .footer-main
+    .local-wrapper.full-flex-container
+      .footer-links
+        .footer-link
           h2 Customer Service
           a(ng-href="1") Contact
           a(ng-href="1") FAQ
           a(ng-href="1") Terms of payment
           a(ng-href="1") Deliver terms and conditions
           a(ng-href="1") Returns and Refunds
-        div.footer-link
+        .footer-link
           h2 Information
           a(ng-href="1") Affiliate
           a(ng-href="1") Cookies
           a(ng-href="1") How to Shop
           a(ng-href="1") About Nelly
           a(ng-href="1") Investor relations
-        div.footer-link
+        .footer-link
           h2 Campaigns
           a(ng-href="1") Event dresses
           a(ng-href="1") Makeup
           a(ng-href="1") Fashion forward
           a(ng-href="1") training clothes
           a(ng-href="1") Special Occasion Dresses
-        div.footer-link
+        .footer-link
           h2 Stores
           a(ng-href="1") Paris
           a(ng-href="1") New York
           a(ng-href="1") London
           a(ng-href="1") Madrid
           a(ng-href="1") Tokio
-      div.footer-social
+      .footer-social
         h2 Social
-        div.footer-social-icons
+        .footer-social-icons
           a.round-social(ng-href="http://twitter.com")
             i.icon.mdi.mdi-twitter
           a.round-social(ng-href="http://pinterest.com")
@@ -150,10 +151,10 @@ footer.footer-full
             i.icon.mdi.mdi-instagram
           a.round-social(ng-href="http://vimeo.com/")
             i.icon.mdi.mdi-vimeo
-      div.footer-logo
+      .footer-logo
         img(ng-src="images/Secured.png")
-  div.footer-short
-    div.local-wrapper.full-flex-container
+  .footer-short
+    .local-wrapper.full-flex-container
       nav.footer-short-links
         a(ng-href="1" ng-class="{open: opened1}")
           span Privacy & Coolies
@@ -169,6 +170,6 @@ footer.footer-full
           span menu
           i.icon.mdi.mdi-menu(ng-click="opened1=!opened1")
 
-      div.footer-short-cr
+      .footer-short-cr
         span &copy;LookShop.com
         span All Rights Reserved
