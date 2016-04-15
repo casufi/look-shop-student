@@ -13,20 +13,7 @@ app.controller 'CustomCarouselCtrl',  ->
   self = this
 
   @isActiveImg = (index) ->
-    if self.activeimage == index
-      return true
-    else
-      return false
-
-  # Now preload all images
-  @isCacheImg = (index) ->
-    return true
-    # Planned to cache only 3 closes images
-    ###
-    if self.activeimage == index || self.activeimage+1 == index||self.activeimage-1 == index||(self.activeimage == 0 && index == self.images.length-1)||(self.activeimage == self.images.length-1 && index == 0)
-      return true
-    return false
-    ###
+    return self.activeimage == index
 
   @setActiveNext = ->
     self.direct = 'right'

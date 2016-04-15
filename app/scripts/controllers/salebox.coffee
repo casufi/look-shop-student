@@ -22,10 +22,12 @@ app.controller 'SaleBoxCtrl', (SaleBoxFctr, $attrs, $element) ->
         elementsWidth = elementWidth * self.salebox.items.length
         minOffset = totallWidth - elementsWidth
         currentPosition = currentPosition - elementWidth
-        currentPosition < minOffset && currentPosition = minOffset
+        if currentPosition < minOffset
+          currentPosition = minOffset
       when 'right' then do ->
         currentPosition = currentPosition + elementWidth
-        currentPosition > 0 && currentPosition = 0
+        if currentPosition > 0
+          currentPosition = 0
     elements.classList.add('animate')
     elements.style.transform = 'translateX('+currentPosition+'px)'
 
