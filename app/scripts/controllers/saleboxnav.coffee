@@ -3,8 +3,7 @@ app.controller 'SaleBoxNavCtrl', (SaleBoxFctr, $attrs) ->
   @id = $attrs.boxid
 
   @salebox = SaleBoxFctr.getSaleBox(self.id)
-  @categories = @salebox.getCategories() 
-  console.log({"salebox":@salebox})
+  @categories = @salebox.getCategories()
 
   @rightByOne = ->
     if self.salebox

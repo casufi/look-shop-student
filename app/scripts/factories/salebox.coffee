@@ -1,4 +1,4 @@
-app.factory 'SaleBoxFctr', ($q) ->
+app.factory 'SaleBoxFctr', ->
 
   self = @
   saleboxes = {}
@@ -28,7 +28,7 @@ app.factory 'SaleBoxFctr', ($q) ->
 
 
   class SaleBox extends EventEmitter
-    
+
     @.prototype.getCategories = ->
       this.categories = [
         {name:"what`s hot", active: true},
