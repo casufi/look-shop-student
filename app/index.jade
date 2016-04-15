@@ -2,7 +2,7 @@ doctype html
 html(ng-app="shopLook")
   head
     base(href="#{basePath}")
-    title(ng-bind="Page.getTitle()")
+    title(ng-bind=":: Page.getTitle()")
 
     meta(charset="utf-8")
     meta(name="fragment" content="!")

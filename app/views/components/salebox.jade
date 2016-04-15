@@ -1,10 +1,10 @@
 .positions(id="$ctrl.salebox.id" ng-swipe-left="$ctrl.moveLeftByOne()" ng-swipe-right="$ctrl.moveRigthByOne()" ng-swipe-disable-mouse)
-  .position(ng-repeat="a in $ctrl.salebox.items")
+  .position(ng-repeat="a in $ctrl.salebox.items" track by $index)
     img.position-picture(ng-src="{{a.url}}")
     .position-sale-corner(ng-if="a.sale") sale
     .position-label
-      .position-name(ng-bind="a.title")
-      .position-price(ng-bind="a.price|currency")
+      .position-name(ng-bind=":: a.title")
+      .position-price(ng-bind=":: a.price|currency")
       .position-button
         span add to cart
         i.icon.mdi.mdi-plus

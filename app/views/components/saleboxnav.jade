@@ -1,6 +1,6 @@
 menu.hot-buttons
   a(ng-repeat="cat in $ctrl.categories" ng-class="[{active:cat.active === true },{open: $ctrl.opened}]" ng-click="$ctrl.changeActiveCategory(cat)")
-    span(ng-bind="cat.name")
+    span(ng-bind=":: cat.name")
     i.icon.mdi.mdi-menu(ng-if="cat.active === true" ng-click="$ctrl.opened=!$ctrl.opened")
 nav.hot-leftrigth
   a.hot-left.active(ng-click="$ctrl.rightByOne()")
