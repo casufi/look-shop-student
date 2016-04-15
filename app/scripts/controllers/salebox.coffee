@@ -1,4 +1,4 @@
-app.controller 'mlsSaleBoxCtrl', (MlsSaleBoxFactory, $attrs, $element) ->
+app.controller 'SaleBoxCtrl', (SaleBoxFctr, $attrs, $element) ->
   currentPosition = 0
 
   totallWidth = $element[0].getBoundingClientRect().width
@@ -9,12 +9,12 @@ app.controller 'mlsSaleBoxCtrl', (MlsSaleBoxFactory, $attrs, $element) ->
   @id = $attrs.boxid
   @tag = $attrs.boxtag
   @navigation = $attrs.navigation*1
-  ctrl = @
+  self = @
 
-  @mlssalebox = MlsSaleBoxFactory.getNewMlsSaleBox(ctrl.id, ctrl.tag)
-  @mlssalebox.loadItems()
+  @salebox = SaleBoxFctr.getSaleBox(self.id, self.tag)
+  @salebox.loadItems()
 
-  if ctrl.navigation
+  if self.navigation
     moveSlider = (direction) ->
       elements = $element[0].querySelector('.positions')
       elements.classList.remove('animate')
@@ -24,7 +24,7 @@ app.controller 'mlsSaleBoxCtrl', (MlsSaleBoxFactory, $attrs, $element) ->
       elementWidth = elem.getBoundingClientRect().width + parseInt(elemCss.marginLeft) + parseInt(elemCss.marginRight)
 
       if direction == 'left'
-        elementsWidth = elementWidth * ctrl.mlssalebox.items.length
+        elementsWidth = elementWidth * self.salebox.items.length
         minOffset = totallWidth - elementsWidth
         currentPosition = currentPosition - elementWidth
         if currentPosition  < minOffset
@@ -43,18 +43,18 @@ app.controller 'mlsSaleBoxCtrl', (MlsSaleBoxFactory, $attrs, $element) ->
       moveSlider('right')
 
     categoryChanged = ->
-      for cat in ctrl.mlssalebox.categories
+      for cat in self.salebox.categories
         if cat.active
           console.log(cat.name)
 
-    @mlssalebox.on('leftone', listenerLeft)
-    @mlssalebox.on('rightone', listenerRight)
-    @mlssalebox.on('categorychange', categoryChanged)
+    @salebox.on('leftone', listenerLeft)
+    @salebox.on('rightone', listenerRight)
+    @salebox.on('categorychange', categoryChanged)
 
     @moveLeftByOne = ->
-      @mlssalebox.emitEvent('leftone')
+      @salebox.emitEvent('leftone')
 
     @moveRigthByOne = ->
-      @mlssalebox.emitEvent('rightone')
+      @salebox.emitEvent('rightone')
 
-  return ctrl
+  return self

@@ -37,7 +37,7 @@ header.menu-box
       .cart-totall
         i.icon.mdi.mdi-shopping
         span.total 0 items|$0
-mls-carousel
+custom-carousel
 
 .user-connections
   .local-wrapper.full-flex-container
@@ -69,17 +69,17 @@ mls-carousel
 
 .hot-sales
   .hot-menu
-    mls-sale-box-nav.local-wrapper.full-flex-container(boxid="hotbox")
+    sale-box-nav.local-wrapper.full-flex-container(boxid="hotbox")
 
   .hot-positions
-    mls-sale-box(boxid="hotbox", boxtag="hot", navigation="1")
+    sale-box(boxid="hotbox", boxtag="hot", navigation="1")
 
 .discounts
   .discounts-top
     .discounts-border
     img(ng-src="images/Clearance.png")
   .discounts-positions
-    mls-sale-box(boxid="discountbox", boxtag="discount", navigation=0)
+    sale-box(boxid="discountbox", boxtag="discount", navigation=0)
 
 section.fav-brands-box
   .local-wrapper

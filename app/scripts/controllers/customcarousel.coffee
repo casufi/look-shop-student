@@ -1,4 +1,4 @@
-app.controller 'mlsCarouselController',  ->
+app.controller 'CustomCarouselCtrl',  ->
   @images = [
     {src:"res/slider1.png", url:"/"},
     {src:"res/Placeholder2.jpeg", url:"/"},
@@ -10,10 +10,10 @@ app.controller 'mlsCarouselController',  ->
   ]
   @activeimage = 0
   @direct = 'left'
-  ctrl = this
+  self = this
 
   @isActiveImg = (index) ->
-    if ctrl.activeimage == index
+    if self.activeimage == index
       return true
     else
       return false
@@ -23,31 +23,31 @@ app.controller 'mlsCarouselController',  ->
     return true
     # Planned to cache only 3 closes images
     ###
-    if ctrl.activeimage == index || ctrl.activeimage+1 == index||ctrl.activeimage-1 == index||(ctrl.activeimage == 0 && index == ctrl.images.length-1)||(ctrl.activeimage == ctrl.images.length-1 && index == 0)
+    if self.activeimage == index || self.activeimage+1 == index||self.activeimage-1 == index||(self.activeimage == 0 && index == self.images.length-1)||(self.activeimage == self.images.length-1 && index == 0)
       return true
     return false
     ###
 
   @setActiveNext = ->
-    ctrl.direct = 'right'
-    ctrl.activeimage++
-    if ctrl.activeimage >= ctrl.images.length
-      ctrl.activeimage = 0
+    self.direct = 'right'
+    self.activeimage++
+    if self.activeimage >= self.images.length
+      self.activeimage = 0
     return undefined
 
   @setActivePrevious = ->
-    ctrl.direct = 'left'
-    ctrl.activeimage--
-    if ctrl.activeimage < 0
-      ctrl.activeimage = ctrl.images.length - 1
+    self.direct = 'left'
+    self.activeimage--
+    if self.activeimage < 0
+      self.activeimage = self.images.length - 1
     return undefined
 
   @setActiveIndex = (index) ->
-    if ctrl.activeimage > index
-      ctrl.direct = 'left'
-    if ctrl.activeimage < index
-      ctrl.direct = 'right'
-    ctrl.activeimage=index
+    if self.activeimage > index
+      self.direct = 'left'
+    if self.activeimage < index
+      self.direct = 'right'
+    self.activeimage=index
     return undefined
 
   return this

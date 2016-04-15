@@ -14,7 +14,6 @@ html(ng-app="shopLook")
     link(rel='stylesheet', href='/bower_components/mdi/css/materialdesignicons.css')
     link(rel='stylesheet', href='/bower_components/mdi/css/materialdesignicons.min.css')
     // endbower
-    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700italic,700&subset=latin,cyrillic")
     link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic&subset=latin,cyrillic')
     link(rel="stylesheet", href="/styles/main.css")
     link(rel="stylesheet", href="/styles/home.css")
@@ -25,8 +24,8 @@ html(ng-app="shopLook")
     link(rel="stylesheet", href="/styles/discounts.css")
     link(rel="stylesheet", href="/styles/footer.css")
 
-    link(rel="stylesheet", href="/styles/carousel.css")
-    link(rel="stylesheet", href="/styles/salebox.css")
+    link(rel="stylesheet", href="/styles/components/carousel.css")
+    link(rel="stylesheet", href="/styles/components/salebox.css")
     // endbuild
 
   body(ng-controller="GlobalCtrl")
@@ -51,17 +50,17 @@ html(ng-app="shopLook")
     script(src='/scripts/configs/run.js')
 
     script(src='/scripts/factories/page.js')
-    script(src='/scripts/factories/mlssaleboxfk.js')
+    script(src='/scripts/factories/salebox.js')
 
     script(src='/scripts/controllers/global.js')
     script(src='/scripts/controllers/home.js')
-    script(src='/scripts/controllers/mlscarouselctrl.js')
-    script(src='/scripts/controllers/mlssaleboxnavctrl.js')
-    script(src='/scripts/controllers/mlssaleboxctrl.js')
+    script(src='/scripts/controllers/customcarousel.js')
+    script(src='/scripts/controllers/saleboxnav.js')
+    script(src='/scripts/controllers/salebox.js')
 
-    script(src='/scripts/components/mlscarousel.js')
-    script(src='/scripts/components/mlssaleboxnav.js')
-    script(src='/scripts/components/mlssalebox.js')
+    script(src='/scripts/components/customcarousel.js')
+    script(src='/scripts/components/saleboxnav.js')
+    script(src='/scripts/components/salebox.js')
 
     script(src='/scripts/splash.js')
     // endbuild

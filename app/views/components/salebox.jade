@@ -1,5 +1,5 @@
-.positions(id="$ctrl.mlssalebox.id" ng-swipe-left="$ctrl.moveLeftByOne()" ng-swipe-right="$ctrl.moveRigthByOne()" ng-swipe-disable-mouse)
-  .position(ng-repeat="a in $ctrl.mlssalebox.items")
+.positions(id="$ctrl.salebox.id" ng-swipe-left="$ctrl.moveLeftByOne()" ng-swipe-right="$ctrl.moveRigthByOne()" ng-swipe-disable-mouse)
+  .position(ng-repeat="a in $ctrl.salebox.items")
     img.position-picture(ng-src="{{a.url}}")
     .position-sale-corner(ng-if="a.sale") sale
     .position-label
