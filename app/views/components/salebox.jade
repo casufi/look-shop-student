@@ -1,5 +1,5 @@
 .positions(id="$ctrl.salebox.id" ng-swipe-left="$ctrl.moveLeftByOne()" ng-swipe-right="$ctrl.moveRigthByOne()" ng-swipe-disable-mouse)
-  .position(ng-repeat="a in $ctrl.salebox.items" track by $index)
+  .position(ng-repeat="a in $ctrl.salebox.items track by $index")
     img.position-picture(ng-src="{{a.url}}")
     .position-sale-corner(ng-if="a.sale") sale
     .position-label

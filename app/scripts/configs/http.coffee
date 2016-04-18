@@ -1,6 +1,7 @@
 app.config ($httpProvider, $locationProvider) ->
   $locationProvider.html5Mode(true)
 
+  $httpProvider.useApplyAsync(true) #Should we use this ?
   $httpProvider.defaults.useXDomain = true
   $httpProvider.defaults.headers.common['Access-Control-Allow-Origin']
 
