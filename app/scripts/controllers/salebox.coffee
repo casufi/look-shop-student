@@ -43,10 +43,10 @@ app.controller 'SaleBoxCtrl', (SaleBoxFctr, $attrs, $element) ->
         console.log(cat.name)
 
   @moveLeftByOne = ->
-    @salebox.emitEvent('leftone')
+    @salebox.trigger('leftone')
 
   @moveRigthByOne = ->
-    @salebox.emitEvent('rightone')
+    @salebox.trigger('rightone')
 
   init = ->
     window.addEventListener "resize", ->
@@ -58,5 +58,11 @@ app.controller 'SaleBoxCtrl', (SaleBoxFctr, $attrs, $element) ->
       self.salebox.on('categorychange', categoryChanged)
 
   init()
+
+  @.$onDestroy = ->
+    #Probably it is not necessary because events are placed on object salebox that will be destroyed
+    self.salebox.off('leftone')
+    self.salebox.off('rightone')
+    self.salebox.off('categorychange')
 
   return self
